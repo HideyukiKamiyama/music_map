@@ -1,4 +1,4 @@
-## Music Map（仮）
+## Music Map
 
 
 
@@ -92,3 +92,8 @@ YouTubeにアップロードされている公式ミュージックビデオを�
 
 ## 画面遷移図
 https://www.figma.com/file/6inHsr10Oe0pJ7KbgZn5Zs/music_map?type=design&node-id=0-1&mode=design&t=0BVngzIhOdUOHUUH-0
+
+
+## ER図
+
+[![Image from Gyazo](https://i.gyazo.com/52fffc7f775107216a1a08fb19ef289f.png)](https://gyazo.com/52fffc7f775107216a1a08fb19ef289f)
