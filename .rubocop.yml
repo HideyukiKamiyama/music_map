@@ -1,0 +1,28 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  DisplayCopNames: true
+  Exclude:
+    - "Gemfile"
+    - "bin/**/*"
+    - "db/**/*"
+    - "log/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "lib/tasks/auto_annotate_models.rake"
+    - "config/environments/*"
+    - "config/puma.rb"
+
+
+# ルールのカスタマイズ
+
+Metrics:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
