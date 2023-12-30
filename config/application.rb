@@ -21,6 +21,7 @@ Bundler.require(*Rails.groups)
 module MusicMap
   class Application < Rails::Application
     config.generators do |g|
+      g.routes false
       g.assets false
       g.helper false
       g.test_framework nil
