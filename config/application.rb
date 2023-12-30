@@ -21,9 +21,10 @@ Bundler.require(*Rails.groups)
 module MusicMap
   class Application < Rails::Application
     config.generators do |g|
+      g.routes false
       g.assets false
       g.helper false
-      g.test_framework false
+      g.test_framework nil
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
