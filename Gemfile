@@ -71,5 +71,8 @@ group :development do
   # gem "spring"
 end
 
-
+# Tailwind CSSの導入
 gem "tailwindcss-rails", "~> 2.1"
+
+# ログイン機能
+gem 'sorcery'

@@ -23,7 +23,7 @@ module MusicMap
     config.generators do |g|
       g.assets false
       g.helper false
-      g.test_framework false
+      g.test_framework nil
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
