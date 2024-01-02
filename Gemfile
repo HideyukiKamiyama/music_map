@@ -76,3 +76,6 @@ gem "tailwindcss-rails", "~> 2.1"
 
 # ログイン機能
 gem 'sorcery'
+
+# 画像アップロード
+gem "carrierwave"
