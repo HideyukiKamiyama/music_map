@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
-  has_many :artist_spots, dependent: :destroy
+  has_many :spots, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :email, uniqueness: true, presence: true

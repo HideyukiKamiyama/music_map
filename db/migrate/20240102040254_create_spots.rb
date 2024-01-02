@@ -1,7 +1,7 @@
-class CreateArtistSpots < ActiveRecord::Migration[7.1]
+class CreateSpots < ActiveRecord::Migration[7.1]
   def change
-    create_table :artist_spots do |t|
-      t.string :name,             null: false
+    create_table :spots do |t|
+      t.string :spot_name,             null: false
       t.text :detail
       t.integer :tag,             null: false
       t.references :user, null: false, foreign_key: true

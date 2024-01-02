@@ -95,5 +95,4 @@ https://www.figma.com/file/6inHsr10Oe0pJ7KbgZn5Zs/music_map?type=design&node-id=
 
 
 ## ER図
-
-[![Image from Gyazo](https://i.gyazo.com/52fffc7f775107216a1a08fb19ef289f.png)](https://gyazo.com/52fffc7f775107216a1a08fb19ef289f)
+[![Image from Gyazo](https://i.gyazo.com/7f62d5570889092c6f1833eb94ab2414.png)](https://gyazo.com/7f62d5570889092c6f1833eb94ab2414)
