@@ -1,26 +1,29 @@
 <div class="container mx-auto px-36">
-  <div class="mb-8">
-    <h1 class="text-xl font-bold mb-2">プロフィール</h1>
+  <div class="mb-10">
+    <h1 class="text-xl font-bold">プロフィール</h1>
     <hr>
   </div>
 
-  <div class="mb-6">
-    <label class="block text-base font-bold mb-2" for="username">
-      ユーザー名
-    </label>
-    <p id="username" class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight">
-      <%= current_user.name %>
-    </p>
-  </div>
-
-  <div class="mb-20">
-    <label class="block text-base font-bold mb-2" for="email">
-      メールアドレス
-    </label>
-    <p id="email" class="shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight">
-      <%= current_user.email %>
-    </p>
-  </div>
+  <table class="table-auto w-full mx-32 mb-20">
+    <tr class="items-center h-20">
+      <td class="text-base font-bold">ニックネーム</td>
+      <td><%= current_user.name %></td>
+    </tr>
+    <tr class="items-center h-20">
+      <td class="text-base font-bold">メールアドレス</td>
+      <td><%= current_user.email %></td>
+    </tr>
+    <tr class="items-center h-20">
+      <td class="text-base font-bold">プロフィール画像</td>
+      <td>
+        <div class="avatar">
+          <div class="w-24 rounded-xl">
+            <%= image_tag current_user.avatar_url %>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
 
   <div class="flex items-center justify-between">
     <%= link_to "メールアドレスの変更", "#", class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
