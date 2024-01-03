@@ -1,0 +1,41 @@
+<%= form_with model: @spot, url: spots_path, local: true do |form| %>
+  <div class="mb-6">
+    <%= form.label :tag, "聖地分類", class: "text-base font-bold mb-2" %>
+
+    <div class="flex justify-around">
+      <div>
+        <%= form.radio_button :tag, :video_location %>
+        <%= form.label :tag_video_location, "MVロケ地" %>
+      </div>
+
+      <div>
+        <%= form.radio_button :tag, :sign %>
+        <%= form.label :tag_sign, "サイン" %>
+      </div>
+
+      <div>
+        <%= form.radio_button :tag, :others %>
+        <%= form.label :tag_others, "その他" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-6">
+    <%= form.label :spot_name, "聖地名", class: "text-base font-bold mb-2" %>
+    <%= form.text_field :spot_name, class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
+  </div>
+
+  <div class="mb-6">
+    <%= form.label :name, "アーティスト名", class: "text-base font-bold mb-2" %>
+    <%= form.text_field :name, class: "shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight" %>
+  </div>
+
+  <div class="mb-10">
+    <%= form.label :detail, "概要", class: "text-base font-bold mb-2" %>
+    <%= form.text_field :detail, class: "shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight" %>
+  </div>
+
+  <div class="flex items-center justify-center mb-24">
+    <%= form.submit "登録", class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+  </div>
+<% end %>

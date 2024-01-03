@@ -1,0 +1,19 @@
+<div class="container mx-auto px-36">
+  <div class="mb-4">
+    <h1 class="text-xl font-bold mb-2">聖地一覧</h1>
+    <hr>
+  </div>
+
+  <div class="flex items-center justify-end my-4">
+    <%= link_to "聖地登録", new_spot_path, class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+  </div>
+
+  <div class="flex flex-col">
+    <% if @spots.present? %>
+      <%= render @spots %>
+    <% else %>
+      <div class="mb-3">聖地が登録されていません</div>
+    <% end %>
+  </div>
+
+</div>
