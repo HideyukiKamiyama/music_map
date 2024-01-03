@@ -1,0 +1,3 @@
+RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
+
+ENV['ACCEPT_LANGUAGE'] = "ja"

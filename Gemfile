@@ -79,3 +79,9 @@ gem 'sorcery'
 
 # 画像アップロード
 gem "carrierwave"
+
+# 環境変数
+gem "dotenv-rails"
+
+# Spotify API
+gem "rspotify"
