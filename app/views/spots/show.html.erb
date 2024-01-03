@@ -1,0 +1,36 @@
+<div class="container mx-auto px-36">
+  <div class="mb-8">
+    <h1 class="text-xl font-bold mb-2">聖地詳細</h1>
+    <hr>
+  </div>
+
+  <div class="flex justify-center">
+    <table class="table-fixed w-10/12 mb-20">
+      <tr class=" h-10">
+        <td class="text-base font-bold">聖地名</td>
+        <td><%= @spot.spot_name %></td>
+      </tr>
+      <tr class=" h-10">
+        <td class="text-base font-bold">聖地分類</td>
+        <td><%= @spot.tag %></td>
+      </tr>
+      <tr class=" h-10">
+        <td class="text-base font-bold">アーティスト名</td>
+        <td><%= @spot.artist.name %></td>
+      </tr>
+      <tr class=" h-10">
+        <td class="text-base font-bold">詳細</td>
+        <td><%= @spot.detail %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="mb-8">
+    <h1 class="text-xl font-bold mb-2">投稿一覧</h1>
+    <hr>
+  </div>
+
+  <div class="flex items-center justify-end my-4">
+    <%= link_to "新規投稿", "#", class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+  </div>
+</div>

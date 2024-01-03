@@ -1,12 +1,13 @@
 class SpotsController < ApplicationController
   skip_before_action :require_login, only: %i[index]
-  before_action :check_artist_name, only: %i[create]
 
   def index
     @spots = Spot.all.order(updated_at: "DESC")
   end
 
-  def show; end
+  def show
+    @spot = Spot.find(params[:id])
+  end
 
   def new
     @spot = ArtistSpot.new
