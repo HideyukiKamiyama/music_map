@@ -12,8 +12,8 @@ class ArtistSpot
 
   def save
     ActiveRecord::Base.transaction do
-      artist = Artist.create(name:)
-      Spot.create!(tag:, spot_name:, detail:,user_id:, artist_id: artist.id)
+      artist = Artist.find_or_create_by(name:)
+      Spot.create(tag:, spot_name:, detail:, user_id:, artist_id: artist.id)
     end
   end
 end
