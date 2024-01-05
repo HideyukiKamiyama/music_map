@@ -10,15 +10,15 @@ class SpotsController < ApplicationController
   end
 
   def new
-    @spot = ArtistSpot.new
+    @artist_spot = ArtistSpot.new
   end
 
   # def edit; end
 
   def create
     if check_artist_name
-      @spot = ArtistSpot.new(spot_params.merge(user_id: current_user.id))
-      if @spot.save
+      @artist_spot = ArtistSpot.new(spot_params.merge(user_id: current_user.id))
+      if @artist_spot.save
         redirect_to spots_path
       else
         render :new
