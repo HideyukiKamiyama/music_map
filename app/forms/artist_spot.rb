@@ -14,12 +14,12 @@ class ArtistSpot
     return if invalid?
 
     ActiveRecord::Base.transaction do
-      artist = Artist.find_or_create_by(name: name)
+      artist = Artist.find_or_create_by(name:)
       if id.present?
         spot = Spot.find(id)
-        spot.update(tag: tag, spot_name: spot_name, detail: detail, artist_id: artist.id)
+        spot.update(tag:, spot_name:, detail:, artist_id: artist.id)
       else
-        Spot.create(tag: tag, spot_name: spot_name, detail: detail, user_id: user_id, artist_id: artist.id)
+        Spot.create(tag:, spot_name:, detail:, user_id:, artist_id: artist.id)
       end
     end
   end
