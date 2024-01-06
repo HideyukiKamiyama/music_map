@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
-  skip_before_action :require_login, only: %i[index]
-  before_action :check_artist_name, only: %i[create]
+  skip_before_action :require_login, only: %i[index show]
+  before_action :set_spot, only: %i[show edit]
 
   def index
     @spots = Spot.all.order(updated_at: "DESC")
@@ -9,15 +9,24 @@ class SpotsController < ApplicationController
   def show; end
 
   def new
-    @spot = ArtistSpot.new
+    @artist_spot = ArtistSpot.new
   end
 
-  # def edit; end
+  def edit
+    @artist_spot = ArtistSpot.new(
+      id: @spot.id,
+      tag: @spot.tag,
+      spot_name: @spot.spot_name,
+      name: @spot.artist.name,
+      detail: @spot.detail,
+      user_id: @spot.user_id
+    )
+  end
 
   def create
+    @artist_spot = ArtistSpot.new(spot_params.merge(user_id: current_user.id))
     if check_artist_name
-      @spot = ArtistSpot.new(spot_params.merge(user_id: current_user.id))
-      if @spot.save
+      if @artist_spot.save
         redirect_to spots_path
       else
         render :new
@@ -27,13 +36,18 @@ class SpotsController < ApplicationController
     end
   end
 
-  # def update
-  #   if @spot.update(spot_params)
-  #     redirect_to @spot
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+    @artist_spot = ArtistSpot.new(spot_params.merge(user_id: current_user.id, id: params[:id]))
+    if check_artist_name
+      if @artist_spot.save
+        redirect_to spot_path(@artist_spot.id)
+      else
+        render :edit
+      end
+    else
+      render :edit
+    end
+  end
 
   private
 
@@ -41,11 +55,15 @@ class SpotsController < ApplicationController
     params.require(:artist_spot).permit(:tag, :spot_name, :name, :detail)
   end
 
+  def set_spot
+    @spot = Spot.find(params[:id])
+  end
+
   # Spotify API上のデータと比較することで正確なアーティスト名が入力されているかチェックするメソッド
   def check_artist_name
     artist_name = params["artist_spot"]["name"]
-    spotify_data = RSpotify::Artist.search(artist_name).first
-    spotify_name = spotify_data.name
+    spotify_name = RSpotify::Artist.search(artist_name).first.name
+    return false unless spotify_name
     artist_name == spotify_name
   end
 end

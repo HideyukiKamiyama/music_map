@@ -1,29 +1,31 @@
 <div class="container mx-auto px-36">
   <div class="mb-10">
-    <h1 class="text-xl font-bold">プロフィール</h1>
+    <h1 class="text-xl font-bold mb-2">プロフィール</h1>
     <hr>
   </div>
 
-  <table class="table-auto w-full mx-32 mb-20">
-    <tr class="items-center h-20">
-      <td class="text-base font-bold">ニックネーム</td>
-      <td><%= current_user.name %></td>
-    </tr>
-    <tr class="items-center h-20">
-      <td class="text-base font-bold">メールアドレス</td>
-      <td><%= current_user.email %></td>
-    </tr>
-    <tr class="items-center h-20">
-      <td class="text-base font-bold">プロフィール画像</td>
-      <td>
-        <div class="avatar">
-          <div class="w-24 rounded-xl">
-            <%= image_tag current_user.avatar_url %>
+  <div class="flex justify-center">
+    <table class="table-fixed w-10/12 mb-20 text-center">
+      <tr class="items-center h-20">
+        <td class="text-base font-bold">ニックネーム</td>
+        <td><%= current_user.name %></td>
+      </tr>
+      <tr class="items-center h-20">
+        <td class="text-base font-bold">メールアドレス</td>
+        <td><%= current_user.email %></td>
+      </tr>
+      <tr class="items-center h-20">
+        <td class="text-base font-bold">プロフィール画像</td>
+        <td>
+          <div class="avatar">
+            <div class="w-24 rounded-xl">
+              <%= image_tag current_user.avatar_url %>
+            </div>
           </div>
-        </div>
-      </td>
-    </tr>
-  </table>
+        </td>
+      </tr>
+    </table>
+  </div>
 
   <div class="flex items-center justify-between">
     <%= link_to "メールアドレスの変更", "#", class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
