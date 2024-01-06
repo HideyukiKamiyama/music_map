@@ -3,7 +3,7 @@ class SpotsController < ApplicationController
   before_action :set_spot, only: %i[show edit]
 
   def index
-    @spots = Spot.all.order(updated_at: "DESC")
+    @spots = Spot.order(updated_at: "DESC")
   end
 
   def show; end
@@ -49,6 +49,10 @@ class SpotsController < ApplicationController
     end
   end
 
+  def bookmarks
+    @bookmark_spots = current_user.bookmark_spots.order(created_at: :desc)
+  end
+
   private
 
   def spot_params
@@ -64,6 +68,7 @@ class SpotsController < ApplicationController
     artist_name = params["artist_spot"]["name"]
     spotify_name = RSpotify::Artist.search(artist_name).first.name
     return false unless spotify_name
+
     artist_name == spotify_name
   end
 end

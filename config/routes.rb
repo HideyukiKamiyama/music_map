@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   root "static_pages#top"
   resources :users, only: %i[new create]
-  resources :spots, except: %i[destroy]
+  resources :spots, except: %i[destroy] do
+    collection do
+      get :bookmarks
+    end
+  end
+  resources :bookmarks, only: %i[create destroy]
 
   resource :profile, only: %i[show edit update]
 
