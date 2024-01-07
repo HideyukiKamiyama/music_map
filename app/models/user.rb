@@ -14,6 +14,10 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
+  def own?(object)
+    id == object&.user_id
+  end
+
   def bookmark(spot)
     bookmark_spots << spot
   end
