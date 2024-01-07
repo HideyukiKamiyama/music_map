@@ -6,7 +6,9 @@ class SpotsController < ApplicationController
     @spots = Spot.order(updated_at: "DESC")
   end
 
-  def show; end
+  def show
+    @posts = @spot.posts.order(updated_at: "DESC")
+  end
 
   def new
     @artist_spot = ArtistSpot.new
