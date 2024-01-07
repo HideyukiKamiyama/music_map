@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "static_pages#top"
   resources :users, only: %i[new create]
   resources :spots, except: %i[destroy] do
+    resources :posts, shallow: true
     collection do
       get :bookmarks
     end
