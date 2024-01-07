@@ -20,12 +20,20 @@ Bundler.require(*Rails.groups)
 
 module MusicMap
   class Application < Rails::Application
+    # ジェネレーターの設定
     config.generators do |g|
       g.routes false
       g.assets false
       g.helper false
       g.test_framework nil
     end
+
+    # タイムゾーンの設定
+    config.time_zone = "Asia/Tokyo"
+
+    # デフォルトのロケールの設定
+    config.i18n.default_locale = :ja
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 

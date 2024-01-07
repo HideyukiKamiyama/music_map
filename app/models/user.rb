@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :spots, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :bookmark_spots, through: :bookmarks, source: :spot
+  has_many :posts, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :email, uniqueness: true, presence: true
@@ -12,6 +13,10 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   mount_uploader :avatar, AvatarUploader
+
+  def own?(object)
+    id == object&.user_id
+  end
 
   def bookmark(spot)
     bookmark_spots << spot
