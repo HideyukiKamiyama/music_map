@@ -3,7 +3,7 @@
     <%= link_to post_path(post) do %>
       <div><%= post.title %> / <%= post.user.name %></div>
     <% end %>
-    <% if current_user.own?(post) %>
+    <% if logged_in? && current_user.own?(post) %>
       <div class="flex">
         <%= link_to edit_post_path(post), class: "pr-2" do %>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

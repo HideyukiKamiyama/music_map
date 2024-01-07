@@ -1,5 +1,10 @@
 class PostsController < ApplicationController
+  skip_before_action :require_login, only: %i[index show]
   before_action :set_post, only: %i[edit update]
+
+  def index
+    @posts = Post.order(updated_at: "DESC")
+  end
 
   def show
     @post = Post.find(params[:id])

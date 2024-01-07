@@ -5,10 +5,8 @@
     <% end %>
     <div class="flex">
       <div class="pr-2"><%= spot.tag %></div>
-      <% if current_user.bookmark?(spot) %>
-        <%= render 'unbookmark', { spot: spot } %>
-      <% else %>
-        <%= render 'bookmark', { spot: spot } %>
+      <% if logged_in? %>
+        <%= render_bookmark_button(current_user, spot) %>
       <% end %>
     </div>
   </div>
