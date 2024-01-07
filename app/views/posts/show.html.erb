@@ -4,11 +4,7 @@
     <hr>
   </div>
 
-  <div class="flex items-center justify-end my-4">
-    <%= link_to "投稿編集", edit_post_path(@post), class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
-  </div>
-
-  <div class="mx-20 mb-20">
+  <div class="mx-20">
     <div class="flex justify-between mb-10">
       <div class="flex flex-col">
         <div class="h-10">
@@ -25,12 +21,16 @@
       </div>
     </div>
 
-    <div class="h-10">
+    <div class="h-10 mb-20">
       <div class="text-base"><%= simple_format(@post.body) %></div>
     </div>
-  </div>
 
-  <div class="flex items-center justify-center">
-    <%= link_to "聖地詳細へ戻る", spot_path(@post.spot), class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+    <div class="flex items-center justify-between">
+      <%= link_to "聖地詳細へ戻る", spot_path(@post.spot), class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+      <div>
+        <%= link_to "編集", edit_post_path(@post), class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+        <%= link_to "削除", post_path(@post), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+      </div>
+    </div>
   </div>
 </div>

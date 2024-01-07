@@ -29,6 +29,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    post = current_user.posts.find(params[:id])
+    spot_id = post.spot.id
+    post.destroy!
+    redirect_to spot_path(spot_id)
+  end
+
   private
 
   def post_params
