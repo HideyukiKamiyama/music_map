@@ -8,12 +8,12 @@
     <%= render "shared/error_messages", object: form.object %>
 
     <div class="mb-6">
-      <%= form.label :name, "ニックネーム", class: "block text-base font-bold mb-2" %>
+      <%= form.label :name, class: "block text-base font-bold mb-2" %>
       <%= form.text_field :name, autofocus: true, class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
     </div>
 
     <div class="mb-10">
-      <%= form.label :avatar, "プロフィール画像", class: "block text-base font-bold mb-2" %>
+      <%= form.label :avatar, class: "block text-base font-bold mb-2" %>
       <%= form.file_field :avatar, accept: "image/*", class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
       <%= form.hidden_field :avatar_cache %>
     </div>

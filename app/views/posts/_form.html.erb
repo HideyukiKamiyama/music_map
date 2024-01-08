@@ -2,12 +2,12 @@
   <%= render "shared/error_messages", object: form.object %>
 
   <div class="mb-6">
-    <%= form.label :title, "タイトル", class: "text-base font-bold mb-2" %>
+    <%= form.label :title, class: "text-base font-bold mb-2" %>
     <%= form.text_field :title, class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
   </div>
 
   <div class="mb-6">
-    <%= form.label :body, "テキスト", class: "text-base font-bold mb-2" %>
+    <%= form.label :body, class: "text-base font-bold mb-2" %>
     <%= form.text_field :body, class: "shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight" %>
   </div>
 

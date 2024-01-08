@@ -1,4 +1,37 @@
 ja:
+  defaults:
+  activerecord:
+    models:
+      user: "ユーザー"
+      artist: "アーティスト"
+      spot: "聖地"
+      post: "投稿"
+      bookmark: "ブックマーク"
+    attributes:
+      user:
+        name: "ニックネーム"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード確認"
+        avatar: "プロフィール画像"
+      artist:
+        name: "アーティスト名"
+      spot:
+        spot_name: "地名 / 施設名"
+        detail: "詳細"
+        tag: "聖地分類"
+      post:
+        title: "タイトル"
+        body: "投稿内容"
+  activemodel:
+    models:
+      artist_spot: "聖地"
+    attributes:
+      artist_spot:
+        name: "アーティスト名"
+        spot_name: "地名 / 施設名"
+        tag: "聖地分類"
+        detail: "詳細"
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
