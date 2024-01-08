@@ -89,3 +89,9 @@ gem "rspotify"
 # 国際化
 gem "rails-i18n"
 gem "enum_help"
+
+# Google map
+gem "geocoder"
+
+# JavaScript変数
+gem "gon"

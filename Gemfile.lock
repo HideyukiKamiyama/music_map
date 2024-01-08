@@ -127,8 +127,14 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
     ffi (1.16.3)
+    geocoder (1.8.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    gon (6.4.0)
+      actionpack (>= 3.0.20)
+      i18n (>= 0.7)
+      multi_json
+      request_store (>= 1.0)
     hashie (5.0.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
@@ -169,6 +175,7 @@ GEM
     mini_portile2 (2.8.5)
     minitest (5.20.0)
     msgpack (1.7.2)
+    multi_json (1.15.0)
     multi_xml (0.6.0)
     mutex_m (0.2.0)
     net-imap (0.4.8)
@@ -277,6 +284,8 @@ GEM
     regexp_parser (2.8.3)
     reline (0.4.1)
       io-console (~> 0.5)
+    request_store (1.5.1)
+      rack (>= 1.4)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -375,6 +384,8 @@ DEPENDENCIES
   debug
   dotenv-rails
   enum_help
+  geocoder
+  gon
   importmap-rails
   jbuilder
   pg (~> 1.1)

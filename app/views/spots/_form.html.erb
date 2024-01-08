@@ -24,20 +24,42 @@
 
   <div class="mb-6">
     <%= form.label :spot_name, class: "text-base font-bold mb-2" %>
-    <%= form.text_field :spot_name, class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
+    <%= form.text_field :spot_name, placeholder: "こちらを入力した状態で「マーカー作成」ボタンをクリックすると自動で住所が入力されます", id: "spot", class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
   </div>
 
   <div class="mb-6">
     <%= form.label :name, class: "text-base font-bold mb-2" %>
-    <%= form.text_field :name, class: "shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight" %>
+    <%= form.text_field :name, placeholder: "正確なアーティスト名を入力してください", class: "shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight" %>
   </div>
 
-  <div class="mb-10">
+  <div class="mb-6">
     <%= form.label :detail, class: "text-base font-bold mb-2" %>
     <%= form.text_field :detail, class: "shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight" %>
+  </div>
+
+  <div class="flex flex-wrap justify-between items-end mb-2 w-full">
+    <div class="flex flex-col flex-grow">
+      <%= form.label :address, class: "text-base font-bold mb-2" %>
+      <%= form.text_field :address, placeholder: "マーカーを作成、ドラッグすると自動で更新されます", id: "address", class: "shadow appearance-none border rounded py-2 px-3 mr-2 leading-tight" %>
+    </div>
+    <div class="flex flex-nowrap">
+      <input type="button" value="マーカー作成" onclick="createMarker()" class="rounded-lg py-2 px-5 mr-2 bg-gray-100 inline-block font-medium hover:bg-gray-200">
+      <input type="button" value="マーカー削除" onclick="deleteMaker()" class="rounded-lg py-2 px-5 bg-gray-100 inline-block font-medium hover:bg-gray-200">
+    </div>
+  </div>
+
+  <%= form.hidden_field :latitude, id: "latitude" %>
+  <%= form.hidden_field :longitude, id: "longitude" %>
+
+  <div class="mb-10">
+    <div id="map" class="h-96 rounded-md"></div>
   </div>
 
   <div class="flex items-center justify-center mb-24">
     <%= form.submit "登録", class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
   </div>
 <% end %>
+
+<%= javascript_import_module_tag "_form" %>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" defer></script>
