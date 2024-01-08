@@ -1,26 +1,32 @@
-<div class="container mx-auto px-36">
+<div class="container mx-auto px-36 mb-20">
   <div class="mb-8">
     <h1 class="text-xl font-bold mb-2">会員登録</h1>
     <hr>
   </div>
 
   <%= form_with model: @user, local: true do |form| %>
+    <%= render "shared/error_messages", object: form.object %>
+
     <div class="mb-6">
-      <%= form.label :name, "ニックネーム", class: "block text-base font-bold mb-2" %>
+      <%= form.label :name, class: "block text-base font-bold mb-2" %>
       <%= form.text_field :name, autofocus: true, class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
     </div>
+
     <div class="mb-6">
-      <%= form.label :email, "メールアドレス", class: "block text-base font-bold mb-2" %>
+      <%= form.label :email, class: "block text-base font-bold mb-2" %>
       <%= form.email_field :email, class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
     </div>
+
     <div class="mb-6">
-      <%= form.label :password, "パスワード", class: "block text-base font-bold mb-2" %>
+      <%= form.label :password, class: "block text-base font-bold mb-2" %>
       <%= form.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
     </div>
+
     <div class="mb-10">
-      <%= form.label :password_confirmation, "パスワード確認", class: "block text-base font-bold mb-2" %>
+      <%= form.label :password_confirmation, class: "block text-base font-bold mb-2" %>
       <%= form.password_field :password_confirmation, class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
     </div>
+
     <div class="flex items-center justify-center">
       <%= form.submit "登録", class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
     </div>

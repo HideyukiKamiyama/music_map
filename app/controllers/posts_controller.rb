@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update]
 
   def index
-    @posts = Post.order(updated_at: "DESC")
+    @posts = Post.includes(:user).order(updated_at: "DESC")
   end
 
   def show
@@ -20,17 +20,19 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params.merge(spot_id: params[:spot_id]))
     if @post.save
-      redirect_to spot_path(@post.spot_id)
+      redirect_to spot_path(@post.spot_id), notice: "投稿を作成しました"
     else
-      render :new
+      flash.now[:alert] = "投稿の作成に失敗しました"
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
     if @post.update(post_params)
-      redirect_to post_path(@post)
+      redirect_to post_path(@post), notice: "投稿を更新しました"
     else
-      render :edit
+      flash.now[:alert] = "投稿の更新に失敗しました"
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -38,7 +40,7 @@ class PostsController < ApplicationController
     post = current_user.posts.find(params[:id])
     spot_id = post.spot.id
     post.destroy!
-    redirect_to spot_path(spot_id)
+    redirect_to spot_path(spot_id), notice: "投稿を削除しました"
   end
 
   private

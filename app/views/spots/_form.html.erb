@@ -1,6 +1,8 @@
 <%= form_with model: @artist_spot, url: @artist_spot.id ? spot_path(@artist_spot.id) : spots_path, method: (@artist_spot.id ? :patch : :post), local: true do |form| %>
+  <%= render "shared/error_messages", object: form.object %>
+
   <div class="mb-6">
-    <%= form.label :tag, "聖地分類", class: "text-base font-bold mb-2" %>
+    <%= form.label :tag, class: "text-base font-bold mb-2" %>
 
     <div class="flex justify-around">
       <div>
@@ -21,17 +23,17 @@
   </div>
 
   <div class="mb-6">
-    <%= form.label :spot_name, "聖地名", class: "text-base font-bold mb-2" %>
+    <%= form.label :spot_name, class: "text-base font-bold mb-2" %>
     <%= form.text_field :spot_name, class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
   </div>
 
   <div class="mb-6">
-    <%= form.label :name, "アーティスト名", class: "text-base font-bold mb-2" %>
+    <%= form.label :name, class: "text-base font-bold mb-2" %>
     <%= form.text_field :name, class: "shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight" %>
   </div>
 
   <div class="mb-10">
-    <%= form.label :detail, "概要", class: "text-base font-bold mb-2" %>
+    <%= form.label :detail, class: "text-base font-bold mb-2" %>
     <%= form.text_field :detail, class: "shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight" %>
   </div>
 
