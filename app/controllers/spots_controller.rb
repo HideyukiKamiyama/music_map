@@ -72,9 +72,14 @@ class SpotsController < ApplicationController
   #「Spotify API上のデータと比較することで正確なアーティスト名が入力されているかチェックするメソッド
   def check_artist_name
     artist_name = params["artist_spot"]["name"]
-    spotify_name = RSpotify::Artist.search(artist_name).first.name
-    return false unless spotify_name
 
+    return false unless artist_name.present?
+
+    spotify_data = RSpotify::Artist.search(artist_name).first
+
+    return false unless spotify_data
+
+    spotify_name = spotify_data.name
     artist_name == spotify_name
   end
 end

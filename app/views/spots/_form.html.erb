@@ -1,4 +1,6 @@
 <%= form_with model: @artist_spot, url: @artist_spot.id ? spot_path(@artist_spot.id) : spots_path, method: (@artist_spot.id ? :patch : :post), local: true do |form| %>
+  <%= render "shared/error_messages", object: form.object %>
+
   <div class="mb-6">
     <%= form.label :tag, "聖地分類", class: "text-base font-bold mb-2" %>
 

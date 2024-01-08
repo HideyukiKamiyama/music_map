@@ -1,4 +1,6 @@
 <%= form_with model: [spot, post], local: true do |form| %>
+  <%= render "shared/error_messages", object: form.object %>
+
   <div class="mb-6">
     <%= form.label :title, "タイトル", class: "text-base font-bold mb-2" %>
     <%= form.text_field :title, class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
