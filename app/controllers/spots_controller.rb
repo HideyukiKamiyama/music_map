@@ -3,11 +3,11 @@ class SpotsController < ApplicationController
   before_action :set_spot, only: %i[show edit]
 
   def index
-    @spots = Spot.order(updated_at: "DESC")
+    @spots = Spot.includes(:artist).order(updated_at: "DESC")
   end
 
   def show
-    @posts = @spot.posts.order(updated_at: "DESC")
+    @posts = @spot.posts.includes(:user).order(updated_at: "DESC")
   end
 
   def new
