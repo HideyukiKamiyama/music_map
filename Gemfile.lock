@@ -118,6 +118,8 @@ GEM
       railties (>= 3.2)
     drb (2.2.0)
       ruby2_keywords
+    enum_help (0.0.19)
+      activesupport (>= 3.0.0)
     erubi (1.12.0)
     faraday (2.8.1)
       base64
@@ -372,6 +374,7 @@ DEPENDENCIES
   carrierwave
   debug
   dotenv-rails
+  enum_help
   importmap-rails
   jbuilder
   pg (~> 1.1)

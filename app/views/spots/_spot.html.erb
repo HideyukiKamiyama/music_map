@@ -4,7 +4,7 @@
       <div><%= spot.spot_name %> / <%= spot.artist.name %></div>
     <% end %>
     <div class="flex">
-      <div class="pr-2"><%= spot.tag %></div>
+      <div class="pr-2"><%= spot.tag_i18n %></div>
       <% if logged_in? %>
         <%= render_bookmark_button(current_user, spot) %>
       <% end %>

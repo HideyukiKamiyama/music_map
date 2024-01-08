@@ -32,6 +32,12 @@ ja:
         spot_name: "地名 / 施設名"
         tag: "聖地分類"
         detail: "詳細"
+  enums:
+    spot:
+      tag:
+        video_location: "MVロケ地"
+        sign: "サイン"
+        others: "その他"
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
