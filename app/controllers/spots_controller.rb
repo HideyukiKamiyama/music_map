@@ -29,12 +29,14 @@ class SpotsController < ApplicationController
     @artist_spot = ArtistSpot.new(spot_params.merge(user_id: current_user.id))
     if check_artist_name
       if @artist_spot.save
-        redirect_to spots_path
+        redirect_to spots_path, notice: "聖地を登録しました"
       else
-        render :new
+        flash.now[:alert] = "聖地の登録に失敗しました"
+        render :new, status: :unprocessable_entity
       end
     else
-      render :new
+      flash.now[:alert] = "アーティスト名が正確ではない、もしくは「Spotify API」上にデータが存在しません"
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -42,12 +44,14 @@ class SpotsController < ApplicationController
     @artist_spot = ArtistSpot.new(spot_params.merge(user_id: current_user.id, id: params[:id]))
     if check_artist_name
       if @artist_spot.save
-        redirect_to spot_path(@artist_spot.id)
+        redirect_to spot_path(@artist_spot.id), notice: "聖地を更新しました"
       else
-        render :edit
+        flash.now[:alert] = "聖地の更新に失敗しました"
+        render :edit, status: :unprocessable_entity
       end
     else
-      render :edit
+      flash.now[:alert] = "アーティスト名が正確ではない、もしくは「Spotify API」上にデータが存在しません"
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -65,7 +69,7 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
   end
 
-  # Spotify API上のデータと比較することで正確なアーティスト名が入力されているかチェックするメソッド
+  #「Spotify API上のデータと比較することで正確なアーティスト名が入力されているかチェックするメソッド
   def check_artist_name
     artist_name = params["artist_spot"]["name"]
     spotify_name = RSpotify::Artist.search(artist_name).first.name
