@@ -4,6 +4,8 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.includes(:artist).order(updated_at: "DESC")
+    gon.spots = @spots
+    gon.artists = Artist.all
   end
 
   def show

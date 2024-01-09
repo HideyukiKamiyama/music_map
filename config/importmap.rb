@@ -7,3 +7,4 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "show", to: "show.js"
 pin "_form", to: "_form.js"
+pin "index", to: "index.js"

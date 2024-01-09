@@ -16,5 +16,5 @@ function initMap(){
   });
 }
 
-// initMap関数をグローバルに配置するための記述
+// initMap関数をグローバルにするための記述
 window.initMap = initMap;

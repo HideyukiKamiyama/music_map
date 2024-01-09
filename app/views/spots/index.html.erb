@@ -5,7 +5,12 @@
   </div>
 
   <div class="flex items-center justify-end my-4">
-    <%= link_to "聖地登録", new_spot_path, class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+    <%= link_to "聖地登録", new_spot_path, data: { turbo: false }, class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+  </div>
+
+  <div class="mb-20 mx-16">
+    <h2 class="text-base font-bold mb-2">マップ</h2>
+    <div id="map" class="h-96 rounded-md"></div>
   </div>
 
   <div class="flex flex-col mb-20">
@@ -16,3 +21,7 @@
     <% end %>
   </div>
 </div>
+
+<%= javascript_import_module_tag "index" %>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" defer></script>

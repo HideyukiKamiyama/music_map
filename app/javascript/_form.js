@@ -89,7 +89,7 @@ function extractAddress(address) {
 }
 
 
-
+// 関数をグローバルにするための記述
 window.initMap = initMap;
 window.createMarker = createMarker;
 window.deleteMaker = deleteMaker;
