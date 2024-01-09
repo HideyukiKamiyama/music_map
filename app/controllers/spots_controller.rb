@@ -72,11 +72,11 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
   end
 
-  #「Spotify API上のデータと比較することで正確なアーティスト名が入力されているかチェックするメソッド
+  # 「Spotify API上のデータと比較することで正確なアーティスト名が入力されているかチェックするメソッド
   def check_artist_name
     artist_name = params["artist_spot"]["name"]
 
-    return false unless artist_name.present?
+    return false if artist_name.blank?
 
     spotify_data = RSpotify::Artist.search(artist_name).first
 
