@@ -2,7 +2,7 @@
   <div class="flex flex-wrap p-6 flex-col md:flex-row items-center">
     <%= link_to "Music Map", root_path, class: "flex items-center text-4xl text-neutral-50 mb-4 md:mb-0" %>
     <nav class="md:ml-auto flex flex-wrap items-center text-xl justify-center">
-      <%= link_to "聖地一覧", spots_path, class: "mr-5 hover:underline" %>
+      <%= link_to "聖地一覧", spots_path, data: { turbo: false }, class: "mr-5 hover:underline" %>
       <%= link_to "投稿一覧", posts_path, class: "mr-5 hover:underline" %>
       <%= link_to "ログイン", login_path, class: "hover:underline" %>
     </nav>

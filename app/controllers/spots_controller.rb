@@ -4,10 +4,13 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.includes(:artist).order(updated_at: "DESC")
+    gon.spots = @spots
+    gon.artists = Artist.all
   end
 
   def show
     @posts = @spot.posts.includes(:user).order(updated_at: "DESC")
+    gon.spot = @spot
   end
 
   def new
@@ -29,7 +32,7 @@ class SpotsController < ApplicationController
     @artist_spot = ArtistSpot.new(spot_params.merge(user_id: current_user.id))
     if check_artist_name
       if @artist_spot.save
-        redirect_to spots_path, notice: "聖地を登録しました"
+        redirect_to spots_path, data: { turbo: false }, notice: "聖地を登録しました"
       else
         flash.now[:alert] = "聖地の登録に失敗しました"
         render :new, status: :unprocessable_entity
@@ -44,7 +47,7 @@ class SpotsController < ApplicationController
     @artist_spot = ArtistSpot.new(spot_params.merge(user_id: current_user.id, id: params[:id]))
     if check_artist_name
       if @artist_spot.save
-        redirect_to spot_path(@artist_spot.id), notice: "聖地を更新しました"
+        redirect_to spot_path(@artist_spot.id), data: { turbo: false }, notice: "聖地を更新しました"
       else
         flash.now[:alert] = "聖地の更新に失敗しました"
         render :edit, status: :unprocessable_entity
@@ -56,24 +59,24 @@ class SpotsController < ApplicationController
   end
 
   def bookmarks
-    @bookmark_spots = current_user.bookmark_spots.order(created_at: :desc)
+    @bookmark_spots = current_user.bookmark_spots.includes(:artist).order(created_at: :desc)
   end
 
   private
 
   def spot_params
-    params.require(:artist_spot).permit(:tag, :spot_name, :name, :detail)
+    params.require(:artist_spot).permit(:tag, :spot_name, :name, :detail, :address, :latitude, :longitude)
   end
 
   def set_spot
     @spot = Spot.find(params[:id])
   end
 
-  #「Spotify API上のデータと比較することで正確なアーティスト名が入力されているかチェックするメソッド
+  # 「Spotify API上のデータと比較することで正確なアーティスト名が入力されているかチェックするメソッド
   def check_artist_name
     artist_name = params["artist_spot"]["name"]
 
-    return false unless artist_name.present?
+    return false if artist_name.blank?
 
     spotify_data = RSpotify::Artist.search(artist_name).first
 

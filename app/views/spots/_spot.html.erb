@@ -1,6 +1,6 @@
 <div class="p-2 w-full">
   <div class="bg-gray-100 rounded flex justify-between p-4 h-full items-center">
-    <%= link_to spot_path(spot) do %>
+    <%= link_to spot_path(spot), data: { turbo: false } do %>
       <div><%= spot.spot_name %> / <%= spot.artist.name %></div>
     <% end %>
     <div class="flex">

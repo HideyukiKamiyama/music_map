@@ -20,6 +20,9 @@ ja:
         spot_name: "地名 / 施設名"
         detail: "詳細"
         tag: "聖地分類"
+        address: "住所"
+        latitude: "緯度"
+        longitude: "経度"
       post:
         title: "タイトル"
         body: "投稿内容"
@@ -32,6 +35,7 @@ ja:
         spot_name: "地名 / 施設名"
         tag: "聖地分類"
         detail: "詳細"
+        address: "住所"
   enums:
     spot:
       tag:

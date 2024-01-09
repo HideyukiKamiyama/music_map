@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params.merge(spot_id: params[:spot_id]))
     if @post.save
-      redirect_to spot_path(@post.spot_id), notice: "投稿を作成しました"
+      redirect_to spot_path(@post.spot_id), data: { turbo: false }, notice: "投稿を作成しました"
     else
       flash.now[:alert] = "投稿の作成に失敗しました"
       render :new, status: :unprocessable_entity
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     post = current_user.posts.find(params[:id])
     spot_id = post.spot.id
     post.destroy!
-    redirect_to spot_path(spot_id), notice: "投稿を削除しました"
+    redirect_to spot_path(spot_id), data: { turbo: false }, notice: "投稿を削除しました"
   end
 
   private

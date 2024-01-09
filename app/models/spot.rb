@@ -9,4 +9,7 @@ class Spot < ApplicationRecord
   validates :tag, presence: true
 
   enum tag: { video_location: 0, sign: 1, others: 2 }
+
+  geocoded_by :address
+  after_validation :geocode
 end

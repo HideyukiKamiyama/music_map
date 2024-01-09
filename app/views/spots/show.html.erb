@@ -6,33 +6,38 @@
 
   <div class="flex items-center justify-end my-4">
     <% if logged_in? && current_user.own?(@spot) %>
-      <%= link_to "聖地編集", edit_spot_path(@spot), class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+      <%= link_to "聖地編集", edit_spot_path(@spot), data: { turbo: false }, class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
     <% end %>
   </div>
 
-  <div class="flex justify-center">
-    <table class="table-fixed w-10/12 mb-20">
-      <tr class=" h-10">
+  <div class="flex justify-center mb-10">
+    <table class="table-fixed w-10/12">
+      <tr class="h-10">
         <td class="text-base font-bold">地名 / 施設名</td>
         <td><%= @spot.spot_name %></td>
       </tr>
-      <tr class=" h-10">
+      <tr class="h-10">
         <td class="text-base font-bold">聖地分類</td>
         <td><%= @spot.tag_i18n %></td>
       </tr>
-      <tr class=" h-10">
+      <tr class="h-10">
         <td class="text-base font-bold">アーティスト名</td>
         <td><%= @spot.artist.name %></td>
       </tr>
-      <tr class=" h-10">
+      <tr class="h-10">
         <td class="text-base font-bold">詳細</td>
         <td><%= @spot.detail %></td>
       </tr>
-      <tr class=" h-10">
+      <tr class="h-10">
         <td class="text-base font-bold">作成者</td>
         <td><%= @spot.user.name %></td>
       </tr>
     </table>
+  </div>
+
+  <div class="mb-20 mx-20">
+    <h2 class="text-base font-bold mb-2">住所</h2>
+    <div id="map" class="h-96 rounded-md"></div>
   </div>
 
   <div class="mb-8">
@@ -52,3 +57,7 @@
     <% end %>
   </div>
 </div>
+
+<%= javascript_import_module_tag "show" %>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" defer></script>
