@@ -38,7 +38,7 @@ function createMarker(){
         getAddress(marker.getPosition());
       });
     } else {
-      alert('地名/施設名フォームに地名や施設名を入力してください');
+      alert('住所を取得できませんでした。');
     }
   });
 }
