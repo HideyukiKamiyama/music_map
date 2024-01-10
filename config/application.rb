@@ -31,6 +31,9 @@ module MusicMap
     # デフォルトのロケールの設定
     config.i18n.default_locale = :ja
 
+    # パスを追加
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 

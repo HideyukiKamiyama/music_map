@@ -1,0 +1,76 @@
+ja:
+  activerecord:
+    models:
+      user: "ユーザー"
+      artist: "アーティスト"
+      spot: "聖地"
+      post: "投稿"
+      bookmark: "ブックマーク"
+    attributes:
+      user:
+        name: "ニックネーム"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード確認"
+        avatar: "プロフィール画像"
+      artist:
+        name: "アーティスト名"
+      spot:
+        spot_name: "地名 / 施設名"
+        detail: "詳細"
+        tag: "聖地分類"
+        address: "住所"
+        latitude: "緯度"
+        longitude: "経度"
+      post:
+        title: "タイトル"
+        body: "投稿内容"
+  activemodel:
+    models:
+      artist_spot: "聖地"
+    attributes:
+      artist_spot:
+        name: "アーティスト名"
+        spot_name: "地名 / 施設名"
+        tag: "聖地分類"
+        detail: "詳細"
+        address: "住所"
+  enums:
+    spot:
+      tag:
+        video_location: "MVロケ地"
+        sign: "サイン"
+        others: "その他"
+  users:
+    create:
+      notice: "会員登録が成功しました"
+      alert: "会員登録に失敗しました"
+  user_sessions:
+    create:
+      notice: ログインしました
+      alert: ログインに失敗しました
+    destroy:
+      notice: ログアウトしました
+  artists:
+  spots:
+    create:
+      notice: "聖地を登録しました"
+      alert: "聖地の登録に失敗しました"
+      name: "アーティスト名が正確ではない、もしくは「Spotify API」上にデータが存在しません"
+    update:
+      notice: "聖地を更新しました"
+      alert: "聖地の更新に失敗しました"
+      name: "アーティスト名が正確ではない、もしくは「Spotify API」上にデータが存在しません"
+  posts:
+    create:
+      notice: "投稿を作成しました"
+      alert: "投稿の作成に失敗しました"
+    update:
+      notice: "投稿を更新しました"
+      alert: "投稿の更新に失敗しました"
+    destroy:
+      notice: "投稿を削除しました"
+  profiles:
+    update:
+      notice: "プロフィールを更新しました"
+      alert: "プロフィールの更新に失敗しました"

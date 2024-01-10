@@ -32,13 +32,13 @@ class SpotsController < ApplicationController
     @artist_spot = ArtistSpot.new(spot_params.merge(user_id: current_user.id))
     if check_artist_name
       if @artist_spot.save
-        redirect_to spots_path, data: { turbo: false }, notice: "聖地を登録しました"
+        redirect_to spots_path, data: { turbo: false }, notice: t('.notice')
       else
-        flash.now[:alert] = "聖地の登録に失敗しました"
+        flash.now[:alert] = t('.alert')
         render :new, status: :unprocessable_entity
       end
     else
-      flash.now[:alert] = "アーティスト名が正確ではない、もしくは「Spotify API」上にデータが存在しません"
+      flash.now[:alert] = t('.name')
       render :new, status: :unprocessable_entity
     end
   end
@@ -47,13 +47,13 @@ class SpotsController < ApplicationController
     @artist_spot = ArtistSpot.new(spot_params.merge(user_id: current_user.id, id: params[:id]))
     if check_artist_name
       if @artist_spot.save
-        redirect_to spot_path(@artist_spot.id), data: { turbo: false }, notice: "聖地を更新しました"
+        redirect_to spot_path(@artist_spot.id), data: { turbo: false }, notice: t('.notice')
       else
-        flash.now[:alert] = "聖地の更新に失敗しました"
+        flash.now[:alert] = t('.alert')
         render :edit, status: :unprocessable_entity
       end
     else
-      flash.now[:alert] = "アーティスト名が正確ではない、もしくは「Spotify API」上にデータが存在しません"
+      flash.now[:alert] = t('.name')
       render :edit, status: :unprocessable_entity
     end
   end
@@ -75,13 +75,9 @@ class SpotsController < ApplicationController
   # 「Spotify API上のデータと比較することで正確なアーティスト名が入力されているかチェックするメソッド
   def check_artist_name
     artist_name = params["artist_spot"]["name"]
-
     return false if artist_name.blank?
-
     spotify_data = RSpotify::Artist.search(artist_name).first
-
     return false unless spotify_data
-
     spotify_name = spotify_data.name
     artist_name == spotify_name
   end

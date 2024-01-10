@@ -9,9 +9,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to spots_path, notice: "会員登録が成功しました"
+      redirect_to spots_path, notice: t('.notice')
     else
-      flash.now[:alert] = "会員登録に失敗しました"
+      flash.now[:alert] = t('.alert')
       render :new, status: :unprocessable_entity
     end
   end
