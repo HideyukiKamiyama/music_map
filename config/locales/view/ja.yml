@@ -1,0 +1,73 @@
+ja:
+  defaults:
+    spots_index: "聖地一覧"
+    posts_index: "投稿一覧"
+    bookmarks_index: "ブックマーク一覧"
+    profile: "プロフィール"
+    profile_edit: "プロフィール編集"
+    login: "ログイン"
+    logout: "ログアウト"
+    privacy_policy: "プライバシーポリシー"
+    terms_of_service: "利用規約"
+    signup: "会員登録"
+    spot_create: "聖地登録"
+    create: "登録"
+    edit: "編集"
+    delete: "削除"
+    delete_confirm: "本当に削除しますか？"
+    email: "メールアドレス"
+  user_sessions:
+    new:
+      password: "パスワード"
+      signup_link: "会員登録ページへ"
+      forgot_password: "パスワードをお忘れの方はこちら"
+  spots:
+    show:
+      title: "聖地詳細"
+      spot_edit: "聖地編集"
+      spot_name: "地名 / 施設名"
+      spot_tag: "聖地分類"
+      artist_name: "アーティスト名"
+      detail: "詳細"
+      create_user: "作成者"
+      address: "所在地"
+      relation_posts: "関連投稿"
+      new_post: "新規投稿"
+      none_post: "まだ投稿がありません"
+    index:
+      title: "聖地一覧"
+      map: "マップ"
+      none_spot: "聖地が登録されていません"
+    edit:
+      title: "聖地編集"
+    form:
+      video_location: "MVロケ地"
+      sign: "サイン"
+      others: "その他"
+      spot_name_placeholder: "こちらに入力した状態で「マーカー作成」ボタンをクリックすると自動で住所が入力されます"
+      artist_name_placeholder: "正確なアーティスト名を入力してください"
+      address_placeholder: "マーカーを作成、ドラッグすると自動で更新されます"
+      create_marker: "マーカー作成"
+      delete_marker: "マーカー削除"
+    bookmarks:
+      none_bookmark: "ブックマークがありません"
+  posts:
+    new:
+      title: "投稿作成"
+    show:
+      title: "投稿詳細"
+      update_date: "更新日"
+      return_spot: "聖地詳細へ戻る"
+    index:
+      title: "投稿一覧"
+      none_post: "投稿がありません"
+    edit:
+      title: "投稿編集"
+  profiles:
+    show:
+      user_name: "ニックネーム"
+      avatar_image: "プロフィール画像"
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%Y/%m/%d"

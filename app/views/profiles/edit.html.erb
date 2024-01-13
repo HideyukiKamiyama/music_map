@@ -1,6 +1,6 @@
 <div class="container mx-auto px-36">
   <div class="mb-8">
-    <h1 class="text-xl font-bold mb-2">プロフィール編集</h1>
+    <h1 class="text-xl font-bold mb-2"><%= t("defaults.profile_edit") %></h1>
     <hr>
   </div>
 
@@ -19,7 +19,7 @@
     </div>
 
     <div class="flex items-center justify-center">
-      <%= form.submit "登録", class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+      <%= form.submit t("defaults.create"), class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
     </div>
   <% end %>
 </div>

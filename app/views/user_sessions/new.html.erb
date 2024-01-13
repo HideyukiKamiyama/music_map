@@ -1,27 +1,27 @@
 <div class="container mx-auto px-36">
   <div class="mb-8">
-    <h1 class="text-xl font-bold mb-2">ログイン</h1>
+    <h1 class="text-xl font-bold mb-2"><%= t("defaults.login") %></h1>
     <hr>
   </div>
 
   <%= form_with url: login_path, local: true do |form| %>
     <div class="mb-6">
-      <%= form.label :email, "メールアドレス", autofocus: true, class: "text-base font-bold mb-2" %>
+      <%= form.label :email, t("defaults.email"), autofocus: true, class: "text-base font-bold mb-2" %>
       <%= form.email_field :email, class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
     </div>
 
     <div class="mb-10">
-      <%= form.label :password, "パスワード", class: "text-base font-bold mb-2" %>
+      <%= form.label :password, t(".password"), class: "text-base font-bold mb-2" %>
       <%= form.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight" %>
     </div>
 
     <div class="flex items-center justify-center mb-24">
-      <%= form.submit "ログイン", class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+      <%= form.submit t("defaults.login"), class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
     </div>
   <% end %>
 
   <div class="flex items-center justify-evenly">
-    <%= link_to "会員登録ページへ", new_user_path, class: "text-base mb-2" %>
-    <%= link_to "パスワードをお忘れの方はこちら", "#", class: "text-base mb-2" %>
+    <%= link_to t(".signup_link"), new_user_path, class: "text-base mb-2" %>
+    <%= link_to t(".forgot_password"), "#", class: "text-base mb-2" %>
   </div>
 </div>

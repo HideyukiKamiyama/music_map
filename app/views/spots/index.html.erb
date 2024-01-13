@@ -1,15 +1,15 @@
 <div class="container mx-auto px-36">
   <div class="mb-4">
-    <h1 class="text-xl font-bold mb-2">聖地一覧</h1>
+    <h1 class="text-xl font-bold mb-2"><%= t(".title") %></h1>
     <hr>
   </div>
 
   <div class="flex items-center justify-end my-4">
-    <%= link_to "聖地登録", new_spot_path, data: { turbo: false }, class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+    <%= link_to t("defaults.spot_create"), new_spot_path, data: { turbo: false }, class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
   </div>
 
   <div class="mb-20 mx-16">
-    <h2 class="text-base font-bold mb-2">マップ</h2>
+    <h2 class="text-base font-bold mb-2"><%= t(".map") %></h2>
     <div id="map" class="h-96 rounded-md"></div>
   </div>
 
@@ -17,7 +17,7 @@
     <% if @spots.present? %>
       <%= render @spots %>
     <% else %>
-      <div class="mb-3">聖地が登録されていません</div>
+      <div class="mb-3"><%= t(".none_spot") %></div>
     <% end %>
   </div>
 </div>

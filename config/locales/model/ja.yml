@@ -1,5 +1,4 @@
 ja:
-  defaults:
   activerecord:
     models:
       user: "ユーザー"
@@ -42,7 +41,35 @@ ja:
         video_location: "MVロケ地"
         sign: "サイン"
         others: "その他"
-  time:
-    formats:
-      default: "%Y/%m/%d %H:%M:%S"
-      short: "%Y/%m/%d"
+  users:
+    create:
+      notice: "会員登録が成功しました"
+      alert: "会員登録に失敗しました"
+  user_sessions:
+    create:
+      notice: ログインしました
+      alert: ログインに失敗しました
+    destroy:
+      notice: ログアウトしました
+  spots:
+    create:
+      notice: "聖地を登録しました"
+      alert: "聖地の登録に失敗しました"
+      name: "正確なアーティスト名を入力してください"
+    update:
+      notice: "聖地を更新しました"
+      alert: "聖地の更新に失敗しました"
+      name: "正確なアーティスト名を入力してください"
+  posts:
+    create:
+      notice: "投稿を作成しました"
+      alert: "投稿の作成に失敗しました"
+    update:
+      notice: "投稿を更新しました"
+      alert: "投稿の更新に失敗しました"
+    destroy:
+      notice: "投稿を削除しました"
+  profiles:
+    update:
+      notice: "プロフィールを更新しました"
+      alert: "プロフィールの更新に失敗しました"
