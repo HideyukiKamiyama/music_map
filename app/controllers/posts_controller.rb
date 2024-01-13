@@ -20,18 +20,18 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params.merge(spot_id: params[:spot_id]))
     if @post.save
-      redirect_to spot_path(@post.spot_id), data: { turbo: false }, notice: t('.notice')
+      redirect_to spot_path(@post.spot_id), data: { turbo: false }, notice: t(".notice")
     else
-      flash.now[:alert] = t('.alert')
+      flash.now[:alert] = t(".alert")
       render :new, status: :unprocessable_entity
     end
   end
 
   def update
     if @post.update(post_params)
-      redirect_to post_path(@post), notice: t('.notice')
+      redirect_to post_path(@post), notice: t(".notice")
     else
-      flash.now[:alert] = t('.alert')
+      flash.now[:alert] = t(".alert")
       render :edit, status: :unprocessable_entity
     end
   end
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     post = current_user.posts.find(params[:id])
     spot_id = post.spot.id
     post.destroy!
-    redirect_to spot_path(spot_id), data: { turbo: false }, notice: t('.notice')
+    redirect_to spot_path(spot_id), data: { turbo: false }, notice: t(".notice")
   end
 
   private

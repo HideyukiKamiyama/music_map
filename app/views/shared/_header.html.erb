@@ -2,8 +2,8 @@
   <div class="flex flex-wrap p-5 flex-col md:flex-row items-center">
     <%= link_to "Music Map", root_path, class: "flex items-center text-4xl text-neutral-50 mb-4 md:mb-0" %>
     <nav class="md:ml-auto flex flex-wrap items-center text-xl justify-center">
-      <%= link_to "聖地一覧", spots_path, data: { turbo: false }, class: "mr-5 hover:underline" %>
-      <%= link_to "投稿一覧", posts_path, class: "mr-5 hover:underline" %>
+      <%= link_to t("defaults.spots_index"), spots_path, data: { turbo: false }, class: "mr-5 hover:underline" %>
+      <%= link_to t("defaults.posts_index"), posts_path, class: "mr-5 hover:underline" %>
       <details class="dropdown dropdown-end">
         <summary class="btn border-0 text-yellow-400 hover:bg-yellow-500 hover:text-neutral-50">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -11,11 +11,10 @@
           </svg>
         </summary>
         <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52 text-gray-700">
-          <li><%= link_to "ブックマーク一覧", bookmarks_spots_path %></li>
-          <li><%= link_to "プロフィール", profile_path %></li>
-          <li><%= link_to "プロフィール編集", edit_profile_path %></li>
-          <li><%= link_to "メールアドレスの変更", "#" %></li>
-          <li><%= link_to "ログアウト", logout_path, data: { turbo_method: :delete } %></li>
+          <li><%= link_to t("defaults.bookmarks_index"), bookmarks_spots_path %></li>
+          <li><%= link_to t("defaults.profile"), profile_path %></li>
+          <li><%= link_to t("defaults.profile_edit"), edit_profile_path %></li>
+          <li><%= link_to t("defaults.logout"), logout_path, data: { turbo_method: :delete } %></li>
         </ul>
       </details>
     </nav>

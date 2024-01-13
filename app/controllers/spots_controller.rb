@@ -76,8 +76,10 @@ class SpotsController < ApplicationController
   def check_artist_name
     artist_name = params["artist_spot"]["name"]
     return false if artist_name.blank?
+
     spotify_data = RSpotify::Artist.search(artist_name).first
     return false unless spotify_data
+
     spotify_name = spotify_data.name
     artist_name == spotify_name
   end

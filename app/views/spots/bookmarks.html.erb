@@ -1,6 +1,6 @@
 <div class="container mx-auto px-36">
   <div class="mb-4">
-    <h1 class="text-xl font-bold mb-2">ブックマーク一覧</h1>
+    <h1 class="text-xl font-bold mb-2"><%= t("defaults.bookmarks_index") %></h1>
     <hr>
   </div>
 
@@ -8,7 +8,7 @@
     <% if @bookmark_spots.present? %>
       <%= render @bookmark_spots %>
     <% else %>
-      <div class="mb-3">ブックマークがありません</div>
+      <div class="mb-3"><%= t(".none_bookmark") %></div>
     <% end %>
   </div>
 </div>

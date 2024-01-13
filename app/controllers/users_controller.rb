@@ -9,9 +9,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to spots_path, notice: t('.notice')
+      redirect_to spots_path, notice: t(".notice")
     else
-      flash.now[:alert] = t('.alert')
+      flash.now[:alert] = t(".alert")
       render :new, status: :unprocessable_entity
     end
   end
