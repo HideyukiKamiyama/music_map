@@ -1,6 +1,6 @@
 <div class="p-2 w-full">
   <div class="bg-gray-100 rounded flex justify-between p-4 h-full items-center">
-    <%= link_to post_path(post) do %>
+    <%= link_to post_path(post), data: { turbo_frame: "_top" } do %>
       <div><%= post.title %> / <%= post.user.name %></div>
     <% end %>
     <% if logged_in? && current_user.own?(post) %>

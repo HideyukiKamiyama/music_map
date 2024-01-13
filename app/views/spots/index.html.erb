@@ -13,13 +13,19 @@
     <div id="map" class="h-96 rounded-md"></div>
   </div>
 
-  <div class="flex flex-col mb-20">
-    <% if @spots.present? %>
-      <%= render @spots %>
-    <% else %>
-      <div class="mb-3"><%= t(".none_spot") %></div>
-    <% end %>
-  </div>
+  <%= turbo_frame_tag "spots-list" do %>
+    <div class="flex flex-col">
+      <% if @spots.present? %>
+        <%= render @spots %>
+      <% else %>
+        <div class="mb-3"><%= t(".none_spot") %></div>
+      <% end %>
+    </div>
+
+    <div class="flex justify-center my-4">
+      <%= paginate @spots %>
+    </div>
+  <% end %>
 </div>
 
 <%= javascript_import_module_tag "index" %>
