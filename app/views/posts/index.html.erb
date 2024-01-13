@@ -4,11 +4,17 @@
     <hr>
   </div>
 
-  <div class="flex flex-col">
-    <% if @posts.present? %>
-      <%= render @posts %>
-    <% else %>
-      <div class="mb-3"><%= t(".none_post") %></div>
-    <% end %>
-  </div>
+  <%= turbo_frame_tag "posts-list" do %>
+    <div class="flex flex-col">
+      <% if @posts.present? %>
+        <%= render @posts %>
+      <% else %>
+        <div class="mb-3"><%= t(".none_post") %></div>
+      <% end %>
+    </div>
+
+    <div class="flex justify-center my-4">
+      <%= paginate @posts %>
+    </div>
+  <% end %>
 </div>

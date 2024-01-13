@@ -95,3 +95,6 @@ gem "geocoder"
 
 # JavaScript変数
 gem "gon"
+
+# ページネーション
+gem "kaminari"
