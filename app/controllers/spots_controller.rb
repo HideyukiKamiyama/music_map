@@ -3,7 +3,8 @@ class SpotsController < ApplicationController
   before_action :set_spot, only: %i[show edit]
 
   def index
-    @spots = Spot.includes(:artist).order(updated_at: "DESC").page(params[:page])
+    @q = Spot.ransack(params[:q])
+    @spots = @q.result(distinct: true).includes(:artist).order(updated_at: "DESC").page(params[:page])
     gon.spots = @spots
     gon.artists = Artist.all
   end

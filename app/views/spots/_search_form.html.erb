@@ -1,0 +1,7 @@
+<div class="flex flex-wrap flex-grow mr-6">
+  <%= search_form_for @q, url: url, class: "flex w-full", data: { turbo: false } do |form| %>
+    <%= form.select :tag_eq, Spot.tags_i18n.invert.map{|key, value| [key, Spot.tags[value]]}, { include_blank: t("defaults.spot_tag") }, class: "flex-auto rounded-md border border-gray-300 outline-none px-3 py-2 mr-1" %>
+    <%= form.search_field :artist_name_cont, class: "flex-auto rounded-md border border-gray-300 outline-none px-3 py-2", placeholder: t("defaults.search_artist_name") %>
+    <%= form.submit t("defaults.search"), class: "rounded-lg py-2 px-5 bg-gray-100 inline-block font-medium hover:bg-gray-200 ml-2" %>
+  <% end %>
+</div>

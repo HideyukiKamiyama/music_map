@@ -12,4 +12,12 @@ class Spot < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[artist_id detail spot_name tag]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[artist bookmarks posts user]
+  end
 end

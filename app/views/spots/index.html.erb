@@ -4,8 +4,13 @@
     <hr>
   </div>
 
-  <div class="flex items-center justify-end my-4">
-    <%= link_to t("defaults.spot_create"), new_spot_path, data: { turbo: false }, class: "btn-primary" %>
+  <div class="flex flex-wrap justify-between items-center w-full my-4">
+    <div class="flex flex-grow">
+      <%= render "search_form", q: @q, url: spots_path %>
+    </div>
+    <div class="flex">
+      <%= link_to t("defaults.spot_create"), new_spot_path, data: { turbo: false }, class: "btn-primary" %>
+    </div>
   </div>
 
   <%= render "shared/tab_list" %>
