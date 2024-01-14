@@ -5,6 +5,35 @@ const spots = gon.spots;
 const artists = gon.artists;
 
 
+// タブによるマップ表示、リスト表示の切り替え処理
+document.addEventListener("DOMContentLoaded", () => {
+  const listView = document.getElementById("list-view");
+  const mapView = document.getElementById("map-view");
+  const listTab = document.getElementById("list-tab");
+  const mapTab = document.getElementById("map-tab");
+
+  listTab.addEventListener("click", () => {
+    mapView.style.display = "none";
+    listView.style.display = "block";
+    listTab.classList.add("tab-active");
+    mapTab.classList.remove("tab-active");
+  });
+
+  mapTab.addEventListener("click", () => {
+    mapView.style.display = "block";
+    listView.style.display = "none";
+    mapTab.classList.add("tab-active");
+    listTab.classList.remove("tab-active");
+  });
+
+  listView.style.display = "block";
+  mapView.style.display = "none";
+  listTab.classList.add("tab-active");
+  mapTab.classList.remove("tab-active");
+});
+
+
+
 // マップの初期化関数
 function initMap(){
   let map = new google.maps.Map(document.getElementById('map'), {
