@@ -16,6 +16,8 @@ ja:
     delete: "削除"
     delete_confirm: "本当に削除しますか？"
     email: "メールアドレス"
+    display_map: "マップ表示"
+    display_list: "リスト表示"
   user_sessions:
     new:
       password: "パスワード"
@@ -36,8 +38,6 @@ ja:
       none_post: "まだ投稿がありません"
     index:
       title: "聖地一覧"
-      display_map: "マップ表示"
-      display_list: "リスト表示"
     edit:
       title: "聖地編集"
     form:

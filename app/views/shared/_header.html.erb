@@ -11,7 +11,7 @@
           </svg>
         </summary>
         <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52 text-gray-700">
-          <li><%= link_to t("defaults.bookmarks_index"), bookmarks_spots_path %></li>
+          <li><%= link_to t("defaults.bookmarks_index"), bookmarks_spots_path, data: { turbo: false } %></li>
           <li><%= link_to t("defaults.profile"), profile_path %></li>
           <li><%= link_to t("defaults.profile_edit"), edit_profile_path %></li>
           <li><%= link_to t("defaults.logout"), logout_path, data: { turbo_method: :delete } %></li>

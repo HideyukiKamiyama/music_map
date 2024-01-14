@@ -4,11 +4,30 @@
     <hr>
   </div>
 
-  <div class="flex flex-col">
-    <% if @bookmark_spots.present? %>
-      <%= render @bookmark_spots %>
-    <% else %>
-      <div class="mb-3"><%= t(".none_bookmark") %></div>
-    <% end %>
+  <%= render "shared/tab_list" %>
+
+  <div id="list-view">
+    <div class="my-6">
+      <%= turbo_frame_tag "spots-list" do %>
+        <div class="flex flex-col">
+          <% if @bookmark_spots.present? %>
+            <%= render @bookmark_spots %>
+          <% else %>
+            <div class="mb-3"><%= t(".none_bookmark") %></div>
+          <% end %>
+        </div>
+
+        <div class="flex justify-center my-4">
+          <%= paginate @bookmark_spots %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div id="map-view">
+    <%= render "shared/map" %>
   </div>
 </div>
+
+<%= javascript_import_module_tag "index" %>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" defer></script>

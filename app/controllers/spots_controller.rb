@@ -63,6 +63,8 @@ class SpotsController < ApplicationController
 
   def bookmarks
     @bookmark_spots = current_user.bookmark_spots.includes(:artist).order(created_at: :desc).page(params[:page])
+    gon.spots = @bookmark_spots
+    gon.artists = Artist.all
   end
 
   private
