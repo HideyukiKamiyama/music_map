@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
 @layer components {
   .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+    @apply flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 hover:shadow-md transition duration-300 rounded-full text-lg mt-10 sm:mt-0;
+  }
+  .link-primary {
+    @apply text-neutral-50 hover:text-amber-500 transition duration-300;
   }
 }
-
-*/
