@@ -5,27 +5,20 @@
   </div>
 
   <div class="flex items-center justify-end my-4">
-    <%= link_to t("defaults.spot_create"), new_spot_path, data: { turbo: false }, class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+    <%= link_to t("defaults.spot_create"), new_spot_path, data: { turbo: false }, class: "btn-primary" %>
   </div>
 
-  <div class="mb-20 mx-16">
-    <h2 class="text-base font-bold mb-2"><%= t(".map") %></h2>
-    <div id="map" class="h-96 rounded-md"></div>
+  <div role="tablist" class="tabs tabs-bordered mb-2">
+    <a role="tab" id="list-tab" class="tab"><%= t(".display_list") %></a>
+    <a role="tab" id="map-tab" class="tab"><%= t(".display_map") %></a>
   </div>
 
-  <%= turbo_frame_tag "spots-list" do %>
-    <div class="flex flex-col">
-      <% if @spots.present? %>
-        <%= render @spots %>
-      <% else %>
-        <div class="mb-3"><%= t(".none_spot") %></div>
-      <% end %>
-    </div>
-
-    <div class="flex justify-center my-4">
-      <%= paginate @spots %>
-    </div>
-  <% end %>
+  <div id="list-view">
+    <%= render "list" %>
+  </div>
+  <div id="map-view">
+    <%= render "map" %>
+  </div>
 </div>
 
 <%= javascript_import_module_tag "index" %>

@@ -24,7 +24,10 @@ class SpotsController < ApplicationController
       spot_name: @spot.spot_name,
       name: @spot.artist.name,
       detail: @spot.detail,
-      user_id: @spot.user_id
+      user_id: @spot.user_id,
+      address: @spot.address,
+      latitude: @spot.latitude,
+      longitude: @spot.longitude
     )
   end
 

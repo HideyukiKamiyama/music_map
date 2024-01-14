@@ -89,6 +89,38 @@ function extractAddress(address) {
 }
 
 
+// 編集でフォームを使用する場合、インスタンスのデータからマーカーを作成する関数
+function initializeMarker(latitude, longitude) {
+  if (latitude && longitude) {
+    let location = new google.maps.LatLng(latitude, longitude);
+    map.setCenter(location);
+    if (marker) {
+      marker.setMap(null);
+    }
+    marker = new google.maps.Marker({
+      position: location,
+      map: map,
+      draggable: true,
+    });
+
+    google.maps.event.addListener(marker, 'dragend', function() {
+      getAddress(marker.getPosition());
+    });
+  }
+}
+
+
+// 画面ロード時に緯度、経度がフォームに入力されていた場合、initializeMarker関数を実行するための処理
+document.addEventListener('DOMContentLoaded', function() {
+  let latitude = document.getElementById('latitude').value;
+  let longitude = document.getElementById('longitude').value;
+
+  if (latitude && longitude) {
+    initializeMarker(parseFloat(latitude), parseFloat(longitude));
+  }
+});
+
+
 // 関数をグローバルにするための記述
 window.initMap = initMap;
 window.createMarker = createMarker;

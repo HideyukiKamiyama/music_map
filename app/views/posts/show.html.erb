@@ -30,8 +30,8 @@
     <%= link_to t(".return_spot"), spot_path(@post.spot), data: { turbo: false }, class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
     <% if logged_in? && current_user.own?(@post) %>
       <div>
-        <%= link_to t("defaults.edit"), edit_post_path(@post), class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
-        <%= link_to t("defaults.delete"), post_path(@post), data: { turbo_method: :delete, turbo_confirm: t("defaults.delete_confirm") }, class: "flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded-full text-lg mt-10 sm:mt-0" %>
+        <%= link_to t("defaults.edit"), edit_post_path(@post), class: "btn-primary" %>
+        <%= link_to t("defaults.delete"), post_path(@post), data: { turbo_method: :delete, turbo_confirm: t("defaults.delete_confirm") }, class: "btn-primary" %>
       </div>
     <% end %>
   </div>

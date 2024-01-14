@@ -36,8 +36,8 @@ ja:
       none_post: "まだ投稿がありません"
     index:
       title: "聖地一覧"
-      map: "マップ"
-      none_spot: "聖地が登録されていません"
+      display_map: "マップ表示"
+      display_list: "リスト表示"
     edit:
       title: "聖地編集"
     form:
@@ -51,6 +51,10 @@ ja:
       delete_marker: "マーカー削除"
     bookmarks:
       none_bookmark: "ブックマークがありません"
+    map:
+      map: "マップ"
+    list:
+      none_spot: "聖地が登録されていません"
   posts:
     new:
       title: "投稿作成"
