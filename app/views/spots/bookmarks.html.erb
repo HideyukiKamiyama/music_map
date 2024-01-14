@@ -4,6 +4,11 @@
     <hr>
   </div>
 
+  <div class="flex flex-wrap justify-between items-center w-full my-4">
+    <div class="flex flex-grow">
+      <%= render "search_form", q: @q, url: bookmarks_spots_path %>
+    </div>
+  </div>
   <%= render "shared/tab_list" %>
 
   <div id="list-view">
