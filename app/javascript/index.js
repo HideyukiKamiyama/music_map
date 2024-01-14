@@ -6,7 +6,7 @@ const artists = gon.artists;
 
 
 // タブによるマップ表示、リスト表示の切り替え処理
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
   const listView = document.getElementById("list-view");
   const mapView = document.getElementById("map-view");
   const listTab = document.getElementById("list-tab");
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function initMap(){
   let map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 35.7100, lng: 139.8107 },
-    zoom: 10
+    zoom: 9
   });
 
   for (let i = 0; i < spots.length; i++) {
