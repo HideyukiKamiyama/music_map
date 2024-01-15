@@ -3,12 +3,11 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create]
   resources :spots, except: %i[destroy] do
-    resources :posts, except: %i[index], shallow: true
+    resources :comments, except: %i[index], shallow: true
     collection do
       get :bookmarks
     end
   end
-  resources :posts, only: %i[index]
   resources :bookmarks, only: %i[create destroy]
 
   resource :profile, only: %i[show edit update]

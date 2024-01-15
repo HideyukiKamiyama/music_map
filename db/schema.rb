@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_10_134640) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_15_131945) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,15 +30,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_10_134640) do
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
+  create_table "comments", force: :cascade do |t|
     t.string "body"
     t.bigint "user_id", null: false
     t.bigint "spot_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["spot_id"], name: "index_posts_on_spot_id"
-    t.index ["user_id"], name: "index_posts_on_user_id"
+    t.index ["spot_id"], name: "index_comments_on_spot_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "spots", force: :cascade do |t|
@@ -70,8 +69,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_10_134640) do
 
   add_foreign_key "bookmarks", "spots"
   add_foreign_key "bookmarks", "users"
-  add_foreign_key "posts", "spots"
-  add_foreign_key "posts", "users"
+  add_foreign_key "comments", "spots"
+  add_foreign_key "comments", "users"
   add_foreign_key "spots", "artists"
   add_foreign_key "spots", "users"
 end

@@ -4,7 +4,7 @@ ja:
       user: "ユーザー"
       artist: "アーティスト"
       spot: "聖地"
-      post: "投稿"
+      comment: "コメント"
       bookmark: "ブックマーク"
     attributes:
       user:
@@ -22,9 +22,8 @@ ja:
         address: "住所"
         latitude: "緯度"
         longitude: "経度"
-      post:
-        title: "タイトル"
-        body: "投稿内容"
+      comment:
+        body: "コメント内容"
   activemodel:
     models:
       artist_spot: "聖地"
@@ -60,15 +59,15 @@ ja:
       notice: "聖地を更新しました"
       alert: "聖地の更新に失敗しました"
       name: "正確なアーティスト名を入力してください"
-  posts:
+  comments:
     create:
-      notice: "投稿を作成しました"
-      alert: "投稿の作成に失敗しました"
+      notice: "コメントを作成しました"
+      alert: "コメントの作成に失敗しました"
     update:
-      notice: "投稿を更新しました"
-      alert: "投稿の更新に失敗しました"
+      notice: "コメントを更新しました"
+      alert: "コメントの更新に失敗しました"
     destroy:
-      notice: "投稿を削除しました"
+      notice: "コメントを削除しました"
   profiles:
     update:
       notice: "プロフィールを更新しました"

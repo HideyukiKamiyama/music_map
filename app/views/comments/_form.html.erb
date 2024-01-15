@@ -1,10 +1,5 @@
-<%= form_with model: [spot, post], local: true do |form| %>
+<%= form_with model: [spot, comment], local: true do |form| %>
   <%= render "shared/error_messages", object: form.object %>
-
-  <div class="mb-6">
-    <%= form.label :title, class: "text-base font-bold mb-2" %>
-    <%= form.text_field :title, class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
-  </div>
 
   <div class="mb-6">
     <%= form.label :body, class: "text-base font-bold mb-2" %>
