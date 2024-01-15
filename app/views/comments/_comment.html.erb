@@ -1,7 +1,7 @@
 <div class="p-2 w-full">
   <div class="bg-gray-100 rounded flex justify-between p-4 h-full items-center">
     <%= link_to comment_path(comment), data: { turbo_frame: "_top" } do %>
-      <div><%= comment.title %> / <%= comment.user.name %></div>
+      <div><%= comment.body %></div>
     <% end %>
     <% if logged_in? && current_user.own?(comment) %>
       <div class="flex">

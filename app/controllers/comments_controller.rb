@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: %i[edit update]
 
   def index
-    @comments = Comment.includes(:user).order(updated_at: "DESC").page(params[:page])
+    @comments = Comment.order(updated_at: "DESC").page(params[:page])
   end
 
   def show
@@ -46,7 +46,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:title, :body)
+    params.require(:comment).permit(:body)
   end
 
   def set_comment

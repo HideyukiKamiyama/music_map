@@ -8,9 +8,6 @@
     <div class="flex justify-between mb-10">
       <div class="flex flex-col">
         <div class="h-10">
-          <h2 class="text-xl font-bold"><%= @comment.title %></h2>
-        </div>
-        <div class="h-10">
           <%= link_to spot_path(@comment.spot), data: { turbo: false } do %>
             <h2 class="text-xl font-bold"><%= @comment.spot.spot_name %> / <%= @comment.spot.artist.name %></h2>
           <% end %>

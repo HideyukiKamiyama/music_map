@@ -23,7 +23,6 @@ ja:
         latitude: "緯度"
         longitude: "経度"
       comment:
-        title: "タイトル"
         body: "コメント内容"
   activemodel:
     models:
