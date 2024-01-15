@@ -8,7 +8,6 @@ Rails.application.routes.draw do
       get :bookmarks
     end
   end
-  resources :comments, only: %i[index]
   resources :bookmarks, only: %i[create destroy]
 
   resource :profile, only: %i[show edit update]

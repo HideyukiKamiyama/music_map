@@ -1,7 +1,6 @@
 ja:
   defaults:
     spots_index: "聖地一覧"
-    comments_index: "コメント一覧"
     bookmarks_index: "ブックマーク一覧"
     profile: "プロフィール"
     profile_edit: "プロフィール編集"
