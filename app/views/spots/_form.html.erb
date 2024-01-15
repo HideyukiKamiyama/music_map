@@ -7,17 +7,17 @@
     <div class="flex justify-around">
       <div>
         <%= form.radio_button :tag, :video_location %>
-        <%= form.label :tag_video_location, t(".video_location") %>
+        <%= form.label :tag_video_location, t("defaults.video_location") %>
       </div>
 
       <div>
         <%= form.radio_button :tag, :sign %>
-        <%= form.label :tag_sign, t(".sign") %>
+        <%= form.label :tag_sign, t("defaults.sign") %>
       </div>
 
       <div>
         <%= form.radio_button :tag, :others %>
-        <%= form.label :tag_others, t(".others") %>
+        <%= form.label :tag_others, t("defaults.others") %>
       </div>
     </div>
   </div>
@@ -43,8 +43,8 @@
       <%= form.text_field :address, placeholder: t(".address_placeholder"), id: "address", class: "shadow appearance-none border rounded py-2 px-3 mr-2 leading-tight" %>
     </div>
     <div class="flex flex-nowrap">
-      <input type="button" value=<%= t(".create_marker") %> onclick="createMarker()" class="rounded-lg py-2 px-5 mr-2 bg-gray-100 inline-block font-medium hover:bg-gray-200">
-      <input type="button" value=<%= t(".delete_marker") %> onclick="deleteMaker()" class="rounded-lg py-2 px-5 bg-gray-100 inline-block font-medium hover:bg-gray-200">
+      <input type="button" value=<%= t(".create_marker") %> onclick="createMarker()" class="btn-secondary mr-2">
+      <input type="button" value=<%= t(".delete_marker") %> onclick="deleteMaker()" class="btn-secondary">
     </div>
   </div>
 

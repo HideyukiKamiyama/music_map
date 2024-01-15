@@ -14,8 +14,16 @@ ja:
     create: "登録"
     edit: "編集"
     delete: "削除"
+    search: "検索"
     delete_confirm: "本当に削除しますか？"
     email: "メールアドレス"
+    display_map: "マップ表示"
+    display_list: "リスト表示"
+    search_artist_name: "アーティスト名で検索"
+    search_spot_tag: "聖地分類で検索"
+    video_location: "MVロケ地"
+    sign: "サイン"
+    others: "その他"
   user_sessions:
     new:
       password: "パスワード"
@@ -33,17 +41,13 @@ ja:
       address: "所在地"
       relation_posts: "関連投稿"
       new_post: "新規投稿"
-      none_post: "まだ投稿がありません"
+      none_post: "投稿がありません"
     index:
       title: "聖地一覧"
-      display_map: "マップ表示"
-      display_list: "リスト表示"
+      none_spot: "聖地がありません"
     edit:
       title: "聖地編集"
     form:
-      video_location: "MVロケ地"
-      sign: "サイン"
-      others: "その他"
       spot_name_placeholder: "こちらに入力した状態で「マーカー作成」ボタンをクリックすると自動で住所が入力されます"
       artist_name_placeholder: "正確なアーティスト名を入力してください"
       address_placeholder: "マーカーを作成、ドラッグすると自動で更新されます"
@@ -53,8 +57,6 @@ ja:
       none_bookmark: "ブックマークがありません"
     map:
       map: "マップ"
-    list:
-      none_spot: "聖地が登録されていません"
   posts:
     new:
       title: "投稿作成"
