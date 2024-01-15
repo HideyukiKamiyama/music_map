@@ -4,17 +4,17 @@
     <hr>
   </div>
 
-  <%= turbo_frame_tag "posts-list" do %>
+  <%= turbo_frame_tag "comments-list" do %>
     <div class="flex flex-col">
-      <% if @posts.present? %>
-        <%= render @posts %>
+      <% if @comments.present? %>
+        <%= render @comments %>
       <% else %>
-        <div class="mb-3"><%= t(".none_post") %></div>
+        <div class="mb-3"><%= t(".none_comment") %></div>
       <% end %>
     </div>
 
     <div class="flex justify-center my-4">
-      <%= paginate @posts %>
+      <%= paginate @comments %>
     </div>
   <% end %>
 </div>

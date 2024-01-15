@@ -41,19 +41,19 @@
   </div>
 
   <div class="mb-8">
-    <h1 class="text-xl font-bold mb-2"><%= t(".relation_posts") %></h1>
+    <h1 class="text-xl font-bold mb-2"><%= t(".relation_comments") %></h1>
     <hr>
   </div>
 
   <div class="flex items-center justify-end my-4">
-    <%= link_to t(".new_post"), new_spot_post_path(@spot), class: "btn-primary" %>
+    <%= link_to t(".new_comment"), new_spot_comment_path(@spot), class: "btn-primary" %>
   </div>
 
   <div class="flex flex-col mb-20">
-    <% if @posts.present? %>
-      <%= render @posts %>
+    <% if @comments.present? %>
+      <%= render @comments %>
     <% else %>
-      <div class="mb-3 px-2"><%= t(".none_post") %></div>
+      <div class="mb-3 px-2"><%= t(".none_comment") %></div>
     <% end %>
   </div>
 </div>

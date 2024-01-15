@@ -1,7 +1,7 @@
 ja:
   defaults:
     spots_index: "聖地一覧"
-    posts_index: "投稿一覧"
+    comments_index: "コメント一覧"
     bookmarks_index: "ブックマーク一覧"
     profile: "プロフィール"
     profile_edit: "プロフィール編集"
@@ -39,9 +39,9 @@ ja:
       detail: "詳細"
       create_user: "作成者"
       address: "所在地"
-      relation_posts: "関連投稿"
-      new_post: "新規投稿"
-      none_post: "投稿がありません"
+      relation_comments: "関連コメント"
+      new_comment: "新規コメント"
+      none_comment: "コメントがありません"
     index:
       title: "聖地一覧"
       none_spot: "聖地がありません"
@@ -57,18 +57,18 @@ ja:
       none_bookmark: "ブックマークがありません"
     map:
       map: "マップ"
-  posts:
+  comments:
     new:
-      title: "投稿作成"
+      title: "コメント作成"
     show:
-      title: "投稿詳細"
+      title: "コメント詳細"
       update_date: "更新日"
       return_spot: "聖地詳細へ戻る"
     index:
-      title: "投稿一覧"
-      none_post: "投稿がありません"
+      title: "コメント一覧"
+      none_comment: "コメントがありません"
     edit:
-      title: "投稿編集"
+      title: "コメント編集"
   profiles:
     show:
       user_name: "ニックネーム"
