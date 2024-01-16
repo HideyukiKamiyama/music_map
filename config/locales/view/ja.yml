@@ -9,8 +9,8 @@ ja:
     privacy_policy: "プライバシーポリシー"
     terms_of_service: "利用規約"
     signup: "会員登録"
-    spot_create: "聖地登録"
-    create: "登録"
+    spot_create: "聖地作成"
+    create: "作成"
     edit: "編集"
     delete: "削除"
     search: "検索"
@@ -38,8 +38,6 @@ ja:
       detail: "詳細"
       create_user: "作成者"
       address: "所在地"
-      relation_comments: "関連コメント"
-      new_comment: "新規コメント"
       none_comment: "コメントがありません"
     index:
       title: "聖地一覧"
@@ -57,17 +55,8 @@ ja:
     map:
       map: "マップ"
   comments:
-    new:
-      title: "コメント作成"
-    show:
-      title: "コメント詳細"
-      update_date: "更新日"
-      return_spot: "聖地詳細へ戻る"
-    index:
-      title: "コメント一覧"
-      none_comment: "コメントがありません"
-    edit:
-      title: "コメント編集"
+    form:
+      create_comment: "コメント作成"
   profiles:
     show:
       user_name: "ニックネーム"
