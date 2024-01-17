@@ -70,6 +70,13 @@ class SpotsController < ApplicationController
     gon.artists = Artist.all
   end
 
+  def autocomplete
+    @artists = Artist.where("name like ?", "%#{params[:q]}%")
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def spot_params
