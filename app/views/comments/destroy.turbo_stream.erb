@@ -1,0 +1,7 @@
+<%= turbo_stream.remove "comment-#{@comment.id}" %>
+
+<% if @comments.empty? %>
+  <%= turbo_stream.append "comments-list" do %>
+    <div id="none-comments" class="mb-3 px-2"><%= t(".none_comment") %></div>
+  <% end %>
+<% end %>

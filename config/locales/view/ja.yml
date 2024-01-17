@@ -57,13 +57,15 @@ ja:
   comments:
     form:
       create_comment: "コメント作成"
+    destroy:
+      none_comment: "コメントがありません"
   profiles:
     show:
       user_name: "ニックネーム"
       avatar_image: "プロフィール画像"
   time:
     formats:
-      default: "%Y/%m/%d %H:%M:%S"
+      default: "%Y/%m/%d %H:%M"
       short: "%Y/%m/%d"
   views:
     pagination:

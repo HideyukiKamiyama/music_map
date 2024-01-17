@@ -1,0 +1,10 @@
+<%= turbo_stream.prepend "comments-list" do %>
+  <% if @comments.present? %>
+    <%= turbo_stream.remove "none-comments" %>
+  <% end %>
+  <%= render 'comments/comment', comment: @comment %>
+<% end %>
+
+<%= turbo_stream.replace "comment-form" do %>
+  <%= render 'comments/form', comment: Comment.new, spot: @comment.spot %>
+<% end %>

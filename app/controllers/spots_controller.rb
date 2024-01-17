@@ -11,7 +11,7 @@ class SpotsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @spot.comments.includes(:user).order(updated_at: "DESC")
+    @comments = @spot.comments.includes(:user).order(created_at: "DESC")
     gon.spot = @spot
   end
 
