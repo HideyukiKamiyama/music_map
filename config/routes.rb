@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create destroy], shallow: true
     collection do
       get :bookmarks
+      get :autocomplete
     end
   end
   resources :bookmarks, only: %i[create destroy]

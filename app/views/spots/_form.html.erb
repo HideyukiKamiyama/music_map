@@ -29,7 +29,7 @@
 
   <div class="mb-6">
     <%= form.label :name, class: "text-base font-bold mb-2" %>
-    <%= form.text_field :name, placeholder: t(".artist_name_placeholder"), class: "shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight" %>
+    <%= form.text_field :name, placeholder: t(".artist_name_placeholder"), class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
   </div>
 
   <div class="mb-6">
@@ -56,7 +56,7 @@
   </div>
 
   <div class="flex items-center justify-center mb-24">
-    <%= form.submit t("defaults.create"), class: "btn-primary" %>
+    <%= form.button t("defaults.create"), class: "btn-primary", type: "button", onclick: "submit();" %>
   </div>
 <% end %>
 
