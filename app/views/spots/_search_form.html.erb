@@ -4,7 +4,7 @@
     <div data-controller="autocomplete" data-autocomplete-url-value="/spots/autocomplete" role="combobox" class="flex-auto relative">
       <%= form.search_field :artist_name_cont, data: { autocomplete_target: 'input' }, class: "w-full rounded-md border border-gray-300 outline-none px-3 py-2", placeholder: t("defaults.search_artist_name") %>
       <%= form.hidden_field :artist_name, data: { autocomplete_target: 'hidden' } %>
-      <ul class="list-group flex-auto absolute z-10 w-full bg-white" data-autocomplete-target="results"></ul>
+      <ul class="list-group flex-auto absolute z-10 w-full rounded-md shadow bg-white" data-autocomplete-target="results"></ul>
     </div>
     <%= form.button t("defaults.search"), class: "btn-secondary ml-2", type: "button", onclick: "submit();" %>
   <% end %>
