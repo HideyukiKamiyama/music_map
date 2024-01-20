@@ -101,3 +101,6 @@ gem "kaminari"
 
 # 検索機能
 gem "ransack"
+
+# AWS S3
+gem "fog-aws"
