@@ -37,6 +37,12 @@
     <%= form.text_field :detail, class: "shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight" %>
   </div>
 
+  <div class="mb-6">
+    <%= form.label :images, class: "text-base font-bold mb-2" %>
+    <%= form.file_field :images, multiple: true, accept: "image/*", class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
+    <%= form.hidden_field :images_cache %>
+  </div>
+
   <div class="flex flex-wrap justify-between items-end mb-2 w-full">
     <div class="flex flex-col flex-grow">
       <%= form.label :address, class: "text-base font-bold mb-2" %>

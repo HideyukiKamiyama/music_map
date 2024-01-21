@@ -1,7 +1,7 @@
 class ArtistSpot
   include ActiveModel::Model
   include ActiveRecord::AttributeAssignment
-  attr_accessor :id, :tag, :spot_name, :name, :detail, :address, :latitude, :longitude, :user_id
+  attr_accessor :id, :tag, :spot_name, :name, :detail, :address, :latitude, :longitude, :images, :images_cache, :user_id
 
   with_options presence: true do
     validates :tag
@@ -18,9 +18,9 @@ class ArtistSpot
       artist = Artist.find_or_create_by(name:)
       if id.present?
         spot = Spot.find(id)
-        spot.update(tag:, spot_name:, detail:, address:, latitude:, longitude:, artist_id: artist.id)
+        spot.update(tag:, spot_name:, detail:, address:, latitude:, longitude:, images:, artist_id: artist.id)
       else
-        Spot.create(tag:, spot_name:, detail:, address:, latitude:, longitude:, user_id:, artist_id: artist.id)
+        Spot.create(tag:, spot_name:, detail:, address:, latitude:, longitude:, images:, user_id:, artist_id: artist.id)
       end
     end
   end

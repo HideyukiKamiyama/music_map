@@ -10,6 +10,10 @@
     <% end %>
   </div>
 
+  <% @spot.images.each do |spot| %>
+    <%= image_tag (spot.url) %>
+  <% end %>
+
   <div class="flex justify-center mb-10">
     <table class="table-fixed w-10/12">
       <tr class="h-10">
