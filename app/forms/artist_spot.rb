@@ -11,6 +11,8 @@ class ArtistSpot
     validates :user_id
   end
 
+  validate :images_count_validation
+
   def save
     return if invalid?
 
@@ -23,5 +25,12 @@ class ArtistSpot
         Spot.create(tag:, spot_name:, detail:, address:, latitude:, longitude:, images:, user_id:, artist_id: artist.id)
       end
     end
+  end
+
+  private
+
+  def images_count_validation
+    valid_images = images.compact_blank
+    errors.add(:images, :too_many) if valid_images.size > 4
   end
 end
