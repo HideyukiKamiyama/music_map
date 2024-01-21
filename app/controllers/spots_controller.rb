@@ -4,7 +4,7 @@ class SpotsController < ApplicationController
 
   def index
     @q = Spot.ransack(params[:q])
-    query_result = @q.result(distinct: true).includes(:artist).order(updated_at: "DESC")
+    query_result = @q.result.includes(:artist).order(updated_at: "DESC")
     @spots = query_result.page(params[:page])
     gon.spots = query_result
     gon.artists = Artist.all
@@ -66,7 +66,7 @@ class SpotsController < ApplicationController
 
   def bookmarks
     @q = current_user.bookmark_spots.ransack(params[:q])
-    query_result = @q.result(distinct: true).includes(:artist).order(created_at: :desc)
+    query_result = @q.result.includes(:artist).order(created_at: :desc)
     @bookmark_spots = query_result.page(params[:page])
     gon.spots = query_result
     gon.artists = Artist.all
@@ -82,7 +82,7 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:artist_spot).permit(:tag, :spot_name, :name, :detail, :address, :latitude, :longitude)
+    params.require(:artist_spot).permit(:tag, :spot_name, :name, :detail, :address, :latitude, :longitude, { images: [] }, :images_cache)
   end
 
   def set_spot

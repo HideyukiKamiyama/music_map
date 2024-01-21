@@ -1,4 +1,6 @@
 class Spot < ApplicationRecord
+  mount_uploaders :images, ImageUploader
+
   belongs_to :user
   belongs_to :artist
   has_many :bookmarks, dependent: :destroy

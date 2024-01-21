@@ -47,6 +47,7 @@ ja:
     form:
       spot_name_placeholder: "こちらに入力した状態で「マーカー作成」ボタンをクリックすると自動で住所が入力されます"
       artist_name_placeholder: "正確なアーティスト名を入力してください"
+      images_limit: "（４枚まで投稿できます）"
       address_placeholder: "マーカーを作成、ドラッグすると自動で更新されます"
       create_marker: "マーカー作成"
       delete_marker: "マーカー削除"

@@ -19,7 +19,7 @@ ja:
         spot_name: "地名 / 施設名"
         detail: "詳細"
         tag: "聖地分類"
-        address: "住所"
+        address: "所在地"
         latitude: "緯度"
         longitude: "経度"
       comment:
@@ -33,7 +33,14 @@ ja:
         spot_name: "地名 / 施設名"
         tag: "聖地分類"
         detail: "詳細"
-        address: "住所"
+        address: "所在地"
+        images: "写真"
+    errors:
+      models:
+        artist_spot:
+          attributes:
+            images:
+              too_many: "の数が多すぎます（最大4枚）"
   enums:
     spot:
       tag:
@@ -46,10 +53,10 @@ ja:
       alert: "会員登録に失敗しました"
   user_sessions:
     create:
-      notice: ログインしました
-      alert: ログインに失敗しました
+      notice: "ログインしました"
+      alert: "ログインに失敗しました"
     destroy:
-      notice: ログアウトしました
+      notice: "ログアウトしました"
   spots:
     create:
       notice: "聖地を作成しました"

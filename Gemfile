@@ -77,8 +77,9 @@ gem "tailwindcss-rails", "~> 2.1"
 # ログイン機能
 gem 'sorcery'
 
-# 画像アップロード
+# 画像関連
 gem "carrierwave"
+gem "mini_magick"
 
 # 環境変数
 gem "dotenv-rails"
