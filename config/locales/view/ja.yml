@@ -40,7 +40,6 @@ ja:
       address: "所在地"
       none_comment: "コメントがありません"
     index:
-      title: "聖地一覧"
       none_spot: "聖地がありません"
     edit:
       title: "聖地編集"

@@ -6,4 +6,9 @@ module ApplicationHelper
     else "bg-gray-200 text-gray-600"
     end
   end
+
+  def page_title(title = "")
+    base_title = "MusicMap"
+    title.empty? ? base_title : title + " | " + base_title
+  end
 end
