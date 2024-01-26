@@ -18,7 +18,7 @@ ja:
       spot:
         spot_name: "地名 / 施設名"
         detail: "詳細"
-        tag: "聖地分類"
+        tag: "分類"
         address: "所在地"
         latitude: "緯度"
         longitude: "経度"
@@ -31,7 +31,7 @@ ja:
       artist_spot:
         name: "アーティスト名"
         spot_name: "地名 / 施設名"
-        tag: "聖地分類"
+        tag: "分類"
         detail: "詳細"
         address: "所在地"
         images: "写真"
