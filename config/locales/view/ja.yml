@@ -3,7 +3,6 @@ ja:
     spots_index: "聖地一覧"
     bookmarks_index: "ブックマーク一覧"
     profile: "プロフィール"
-    profile_edit: "プロフィール編集"
     login: "ログイン"
     logout: "ログアウト"
     privacy_policy: "プライバシーポリシー"
@@ -63,6 +62,8 @@ ja:
     show:
       user_name: "ニックネーム"
       avatar_image: "プロフィール画像"
+    edit:
+      title: "プロフィール編集"
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
