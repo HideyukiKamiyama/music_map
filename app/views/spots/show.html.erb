@@ -11,54 +11,62 @@
     <% end %>
   </div>
 
-  <% if @spot.images.present? %>
-    <div class="flex justify-center mb-10">
-      <div class="carousel custom-carousel overflow-hidden rounded-lg shadow hover:shadow-lg transition duration-300">
-        <% @spot.images.each_with_index do |spot, i| %>
-          <div id="slide<%= i + 1 %>" class="carousel-item relative">
-            <%= image_tag (spot.url), class: "object-cover w-full h-full" %>
-            <% if @spot.images.size >= 2 %>
-              <div class="absolute flex justify-between transform -translate-y-1/2 left-2 right-2 top-1/2">
-                <% prev_index = i > 0 ? i : @spot.images.size %>
-                <% next_index = i + 2 <= @spot.images.size ? i + 2 : 1 %>
-                <a href="#slide<%= prev_index %>" class="btn btn-circle">❮</a>
-                <a href="#slide<%= next_index %>" class="btn btn-circle">❯</a>
-              </div>
-            <% end %>
+  <div class="mx-auto">
+    <% if @spot.images.present? %>
+      <div class="flex justify-center mb-10">
+        <div class="carousel custom-carousel overflow-hidden rounded-lg shadow hover:shadow-lg transition duration-300">
+          <% @spot.images.each_with_index do |spot, i| %>
+            <div id="slide<%= i + 1 %>" class="carousel-item relative">
+              <%= image_tag (spot.url), class: "object-cover w-full h-full" %>
+              <% if @spot.images.size >= 2 %>
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-2 right-2 top-1/2">
+                  <% prev_index = i > 0 ? i : @spot.images.size %>
+                  <% next_index = i + 2 <= @spot.images.size ? i + 2 : 1 %>
+                  <a href="#slide<%= prev_index %>" class="btn btn-circle">❮</a>
+                  <a href="#slide<%= next_index %>" class="btn btn-circle">❯</a>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="px-18">
+      <div class="mb-4">
+        <div class="flex flex-wrap items-center mb-2">
+          <h1 class="text-3xl mr-4"><%= @spot.spot_name %></h1>
+          <div class="badge badge-lg bg-amber-300 border-none"><%= @spot.tag_i18n %></div>
+        </div>
+        <h2 class="text-2xl"><%= @spot.artist.name %></h2>
+      </div>
+      <section class="mb-4">
+        <h3 class="text-base font-bold mb-1"><%= t(".detail") %></h3>
+        <p><%= simple_format(@spot.detail) %></p>
+      </section>
+    </div>
+
+    <div class="mb-8 px-18">
+      <div class="mb-2">
+        <h3 class="text-base font-bold mb-2"><%= t(".address") %></h3>
+        <p><%= @spot.address %></p>
+      </div>
+      <div id="map" class="h-96 rounded-md"></div>
+    </div>
+
+    <div class="flex flex-wrap items-center mb-20">
+      <div class="text-lg mr-2"><%= t(".create_user") %>：</div>
+      <div class="flex items-center">
+        <div class="mr-2">
+          <%= @spot.user.name %>
+        </div>
+        <div class="avatar">
+          <div class="w-10 rounded-full">
+            <%= image_tag @spot.user.avatar_url %>
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
-  <% end %>
-
-  <div class="flex justify-center mb-10">
-    <table class="table-fixed w-10/12">
-      <tr class="h-10">
-        <td class="text-base font-bold"><%= t(".spot_name") %></td>
-        <td><%= @spot.spot_name %></td>
-      </tr>
-      <tr class="h-10">
-        <td class="text-base font-bold"><%= t(".spot_tag") %></td>
-        <td><%= @spot.tag_i18n %></td>
-      </tr>
-      <tr class="h-10">
-        <td class="text-base font-bold"><%= t(".artist_name") %></td>
-        <td><%= @spot.artist.name %></td>
-      </tr>
-      <tr class="h-10">
-        <td class="text-base font-bold"><%= t(".detail") %></td>
-        <td><%= simple_format(@spot.detail) %></td>
-      </tr>
-      <tr class="h-10">
-        <td class="text-base font-bold"><%= t(".create_user") %></td>
-        <td><%= @spot.user.name %></td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="mb-20 mx-20">
-    <h2 class="text-base font-bold mb-2"><%= t(".address") %></h2>
-    <div id="map" class="h-96 rounded-md"></div>
   </div>
 
   <div class="mb-8">
