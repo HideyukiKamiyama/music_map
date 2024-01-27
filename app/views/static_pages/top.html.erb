@@ -11,8 +11,13 @@
   <p class="flex justify-center text-yellow-400 text-xl my-10">街と音楽を繋げるお出かけアプリ♪</p>
 
   <% unless logged_in? %>
-  <div class="flex justify-center my-20">
+  <div class="flex justify-center mt-20 mb-8">
     <%= link_to t("defaults.signup"), new_user_path, class: "btn-primary" %>
   </div>
   <% end %>
+</section>
+<section class="flex justify-center my-4 p-4">
+  <div class="flex flex-col w-3/4 rounded-xl shadow-md">
+    <h1 class="flex justify-center text-3xl font-medium">Music Mapとは？</h1>
+    <p class="flex justify-center py-4">音楽に関する聖地を登録、検索できるお出かけアプリです♪<br>皆さんの知ってる聖地を自由に登録してみましょう！</p></div>
 </section>
