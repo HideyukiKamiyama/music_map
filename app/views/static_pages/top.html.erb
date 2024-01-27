@@ -16,8 +16,40 @@
   </div>
   <% end %>
 </section>
+
 <section class="flex justify-center my-4 p-4">
   <div class="flex flex-col w-3/4 rounded-xl shadow-md">
-    <h1 class="flex justify-center text-3xl font-medium">Music Mapとは？</h1>
+    <h2 class="flex justify-center text-3xl font-medium">Music Mapとは？</h2>
     <p class="flex justify-center py-4">音楽に関する聖地を登録、検索できるお出かけアプリです♪<br>皆さんの知ってる聖地を自由に登録してみましょう！</p></div>
 </section>
+
+<section class="flex justify-center my-4 p-4">
+  <div class="flex flex-col w-3/4 rounded-xl shadow-md">
+    <h2 class="flex justify-center text-3xl font-medium m-2">使い方</h2>
+    <div class="flex flex-col m-2">
+      <section class="m-4">
+        <h3 class="flex justify-center text-2xl font-medium">その１. 聖地を登録してみよう！</h3>
+        <p class="flex justify-center pt-4">好きなアーティストに関連する場所を登録してみましょう♪</p>
+        <p class="flex justify-center pb-4">登録フォームではマップ上のマーカーをドラッグすることで詳細な位置を登録できるよ！</p>
+      </section>
+      <section class="m-4">
+        <h3 class="flex justify-center text-2xl font-medium">その２. 聖地を検索してみよう！</h3>
+        <p class="flex justify-center pt-4">条件を絞って聖地を検索してみよう♪</p>
+        <p class="flex justify-center pb-4">家の近所にあのアーティストの聖地があるかも！！？？</p>
+      </section>
+    </div>
+  </div>
+</section>
+
+<div>
+  <% unless logged_in? %>
+  <div class="flex justify-center mt-10 mb-20">
+    <div class="flex flex-col">
+      <h2 class="text-2xl font-base mb-3">登録はこちら</h2>
+      <div class="flex justify-center">
+        <%= link_to t("defaults.signup"), new_user_path, class: "btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
