@@ -1,14 +1,18 @@
-<section class="text-gray-700 font-medium">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-      <h1 class="flex-grow sm:pr-16 text-8xl text-yellow-400">Music Map</h1>
-      <% if logged_in? %>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-20 h-20 text-yellow-400">
-          <path fill-rule="evenodd" d="M19.952 1.651a.75.75 0 0 1 .298.599V16.303a3 3 0 0 1-2.176 2.884l-1.32.377a2.553 2.553 0 1 1-1.403-4.909l2.311-.66a1.5 1.5 0 0 0 1.088-1.442V6.994l-9 2.572v9.737a3 3 0 0 1-2.176 2.884l-1.32.377a2.553 2.553 0 1 1-1.402-4.909l2.31-.66a1.5 1.5 0 0 0 1.088-1.442V5.25a.75.75 0 0 1 .544-.721l10.5-3a.75.75 0 0 1 .658.122Z" clip-rule="evenodd" />
-        </svg>
-      <% else %>
-        <%= link_to t("defaults.signup"), new_user_path, class: "btn-primary" %>
-      <% end %>
+<section class="pt-36 pb-10">
+  <div class="flex flex-row items-end justify-center mx-auto">
+    <div class="relative">
+      <h1 class="relative text-8xl font-medium text-yellow-400 z-10">Music Map</h1>
+      <div class="absolute bottom-16 left-4 animate-pulse z-0">
+        <%= image_tag "score.svg" %>
+      </div>
     </div>
+    <%= image_tag "top_icon.svg" %>
   </div>
+  <p class="flex justify-center text-yellow-400 text-xl my-10">街と音楽を繋げるお出かけアプリ♪</p>
+
+  <% unless logged_in? %>
+  <div class="flex justify-center my-20">
+    <%= link_to t("defaults.signup"), new_user_path, class: "btn-primary" %>
+  </div>
+  <% end %>
 </section>
