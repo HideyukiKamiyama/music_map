@@ -3,9 +3,8 @@ class SpotsController < ApplicationController
 
   def index
     @q = Spot.ransack(params[:q])
-    query_result = @q.result.includes(:artist).order(updated_at: "DESC")
-    @spots = query_result.page(params[:page])
-    gon.spots = query_result
+    gon.spots = @q.result.includes(:artist).order(updated_at: "DESC")
+    @spots = gon.spots.page(params[:page])
     gon.artists = Artist.all
   end
 
@@ -67,9 +66,8 @@ class SpotsController < ApplicationController
 
   def bookmarks
     @q = current_user.bookmark_spots.ransack(params[:q])
-    query_result = @q.result.includes(:artist).order(created_at: :desc)
-    @bookmark_spots = query_result.page(params[:page])
-    gon.spots = query_result
+    gon.spots = @q.result.includes(:artist).order(created_at: :desc)
+    @bookmark_spots = gon.spots.page(params[:page])
     gon.artists = Artist.all
   end
 
