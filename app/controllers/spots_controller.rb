@@ -1,6 +1,5 @@
 class SpotsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
-  before_action :set_spot, only: %i[show edit]
 
   def index
     @q = Spot.ransack(params[:q])
@@ -11,6 +10,7 @@ class SpotsController < ApplicationController
   end
 
   def show
+    @spot = Spot.find(params[:id])
     @comment = Comment.new
     @comments = @spot.comments.includes(:user).order(created_at: "DESC")
     gon.spot = @spot
@@ -21,6 +21,7 @@ class SpotsController < ApplicationController
   end
 
   def edit
+    @spot = current_user.spots.find(params[:id])
     @artist_spot = ArtistSpot.new(
       id: @spot.id,
       tag: @spot.tag,
@@ -83,10 +84,6 @@ class SpotsController < ApplicationController
 
   def spot_params
     params.require(:artist_spot).permit(:tag, :spot_name, :name, :detail, :address, :latitude, :longitude, { images: [] }, :images_cache)
-  end
-
-  def set_spot
-    @spot = Spot.find(params[:id])
   end
 
   # 「Spotify API上のデータと比較することで正確なアーティスト名が入力されているかチェックするメソッド
