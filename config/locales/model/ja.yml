@@ -40,6 +40,7 @@ ja:
         artist_spot:
           attributes:
             name:
+              input_artist_name: "を入力してください"
               no_artist_data: "が正しく取得できませんでした"
               not_accurate_name: "が正確ではありません"
             images:
