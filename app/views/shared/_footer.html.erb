@@ -1,9 +1,11 @@
-<%= image_tag "cat.svg", class: "ml-6" %>
-<footer class="text-neutral-50 bg-yellow-400">
-  <div class="p-6 flex-col md:flex-row items-center">
-    <nav class="md:ml-auto flex justify-center items-center text-lg">
-      <%= link_to t("defaults.privacy_policy"), privacy_policy_path, class: "mr-24 link-primary" %>
+<%= image_tag "cat.svg", class: "ml-20" %>
+<footer class="text-neutral-50 bg-yellow-400 py-3">
+  <div class="flex-col md:flex-row items-center">
+    <nav class="flex justify-center text-base space-x-3">
       <%= link_to t("defaults.terms_of_service"), terms_of_service_path, class: "link-primary" %>
+      <%= link_to t("defaults.privacy_policy"), privacy_policy_path, class: "link-primary" %>
+      <%= link_to t("defaults.inquiry"), "https://docs.google.com/forms/d/e/1FAIpQLSf_9DtVWrsXqct0oMMMZ0SykXH2b9waLx2GDaja77JFMLf-jA/viewform", class: "link-primary", target: "_blank" %>
     </nav>
   </div>
+  <div class="flex justify-center text-sm">©️ 2024 MusicMap</div>
 </footer>
