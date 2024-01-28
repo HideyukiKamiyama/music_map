@@ -1,7 +1,7 @@
 <%= form_with model: @artist_spot, url: @artist_spot.id ? spot_path(@artist_spot.id) : spots_path, method: (@artist_spot.id ? :patch : :post), local: true do |form| %>
   <%= render "shared/error_messages", object: form.object %>
 
-  <div class="mb-6">
+  <div class="mb-10">
     <div class="flex flex-wrap">
       <%= form.label :tag, class: "text-base font-bold mb-2" %>
       <p class="text-red-500 ml-1">*</p>
@@ -25,47 +25,38 @@
     </div>
   </div>
 
-  <div class="mb-6">
-    <div class="flex flex-wrap">
-      <%= form.label :spot_name, class: "text-base font-bold mb-2" %>
-      <p class="text-red-500 ml-1">*</p>
-    </div>
-    <%= form.text_field :spot_name, placeholder: t(".spot_name_placeholder"), id: "spot", class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
-  </div>
-
-  <div class="mb-6">
+  <div class="mb-10">
     <div class="flex flex-wrap">
       <%= form.label :name, class: "text-base font-bold mb-2" %>
       <p class="text-red-500 ml-1">*</p>
     </div>
-    <%= form.text_field :name, placeholder: t(".artist_name_placeholder"), class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
+    <%= form.text_field :name, placeholder: t(".artist_name_placeholder"), class: "shadow border rounded w-full py-2 px-3" %>
   </div>
 
-  <div class="mb-6">
-    <%= form.label :detail, class: "text-base font-bold mb-2" %>
-    <%= form.text_field :detail, class: "shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight" %>
-  </div>
-
-  <div class="mb-6">
-    <div class="flex flex-wrap">
-      <%= form.label :images, class: "text-base font-bold mb-2" %>
-      <p class="ml-1 text-sm"><%= t(".images_limit") %></p>
+  <div class="flex justify-between items-end mb-10 w-full">
+    <div class="flex flex-col flex-grow">
+      <div class="flex flex-wrap">
+        <%= form.label :spot_name, class: "text-base font-bold mb-2" %>
+        <p class="text-red-500 ml-1">*</p>
+      </div>
+      <%= form.text_field :spot_name, placeholder: t(".spot_name_placeholder"), id: "spot", class: "shadow border rounded w-full py-2 px-3" %>
     </div>
-    <%= form.file_field :images, multiple: true, accept: "image/*", class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
-    <%= form.hidden_field :images_cache %>
+    <div class="flex flex-nowrap">
+      <input type="button" value=<%= t(".create_marker") %> onclick="createMarker()" class="btn-secondary ml-2 w-28">
+    </div>
   </div>
 
-  <div class="flex flex-wrap justify-between items-end mb-2 w-full">
+  <div class="flex justify-between items-end mb-2 w-full">
     <div class="flex flex-col flex-grow">
       <div class="flex flex-wrap">
         <%= form.label :address, class: "text-base font-bold mb-2" %>
         <p class="text-red-500 ml-1">*</p>
+        <p class="ml-1 text-sm"><%= t(".address_message") %></p>
       </div>
-      <%= form.text_field :address, placeholder: t(".address_placeholder"), id: "address", class: "shadow appearance-none border rounded py-2 px-3 mr-2 leading-tight" %>
+      <%= form.text_field :address, placeholder: t(".address_placeholder"), id: "address", class: "shadow appearance-none border rounded w-full py-2 px-3" %>
     </div>
     <div class="flex flex-nowrap">
-      <input type="button" value=<%= t(".create_marker") %> onclick="createMarker()" class="btn-secondary mr-2">
-      <input type="button" value=<%= t(".delete_marker") %> onclick="deleteMaker()" class="btn-secondary">
+      <input type="button" value=<%= t(".delete_marker") %> onclick="deleteMaker()" class="btn-secondary ml-2 w-28">
     </div>
   </div>
 
@@ -76,7 +67,21 @@
     <div id="map" class="h-96 rounded-md"></div>
   </div>
 
-  <div class="flex items-center justify-center mb-24">
+  <div class="mb-10">
+    <%= form.label :detail, class: "text-base font-bold mb-2" %>
+    <%= form.text_field :detail, class: "shadow appearance-none border rounded w-full py-2 px-3 mb-3 leading-tight" %>
+  </div>
+
+  <div class="mb-10">
+    <div class="flex flex-wrap">
+      <%= form.label :images, class: "text-base font-bold mb-2" %>
+      <p class="ml-1 text-sm"><%= t(".images_limit") %></p>
+    </div>
+    <%= form.file_field :images, multiple: true, accept: "image/*", class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
+    <%= form.hidden_field :images_cache %>
+  </div>
+
+  <div class="flex items-center justify-center mb-20">
     <%= form.button t("defaults.create"), class: "btn-primary", type: "button", onclick: "submit();" %>
   </div>
 <% end %>

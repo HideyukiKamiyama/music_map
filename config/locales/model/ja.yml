@@ -39,6 +39,9 @@ ja:
       models:
         artist_spot:
           attributes:
+            name:
+              no_artist_data: "が正しく取得できませんでした"
+              not_accurate_name: "が正確ではありません"
             images:
               too_many: "の数が多すぎます（最大4枚）"
   enums:
@@ -61,11 +64,9 @@ ja:
     create:
       notice: "聖地を作成しました"
       alert: "聖地の作成に失敗しました"
-      name: "正確なアーティスト名を入力してください"
     update:
       notice: "聖地を更新しました"
       alert: "聖地の更新に失敗しました"
-      name: "正確なアーティスト名を入力してください"
   comments:
     create:
       notice: "コメントを作成しました"

@@ -12,6 +12,7 @@ class ArtistSpot
   end
 
   validate :images_count_validation
+  validate :check_artist_name
 
   def save
     return if invalid?
@@ -32,5 +33,14 @@ class ArtistSpot
   def images_count_validation
     valid_images = images.compact_blank
     errors.add(:images, :too_many) if valid_images.size > 4
+  end
+
+  # 「Spotify API上のデータと比較することで正確なアーティスト名が入力されているかチェックするバリデーション
+  def check_artist_name
+    spotify_data = RSpotify::Artist.search(name).first
+    errors.add(:name, :no_artist_data) unless spotify_data
+
+    spotify_name = spotify_data.name
+    errors.add(:name, :not_accurate_name) unless name == spotify_name
   end
 end
