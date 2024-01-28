@@ -11,4 +11,31 @@ module ApplicationHelper
     base_title = "MusicMap"
     title.empty? ? base_title : "#{title} | #{base_title}"
   end
+
+  def default_meta_tags
+    {
+      site: "MusicMap",
+      title: "街と音楽を繋げるお出かけアプリ♪",
+      reverse: false,
+      charset: "utf-8",
+      description: "音楽に関する聖地を登録、検索することで聖地巡礼を楽しむことができるアプリです",
+      keywords: "",
+      canonical: request.original_url,
+      separator: "|",
+      og: {
+        site_name: :site,
+        title: :title,
+        description: :description,
+        type: "website",
+        url: request.original_url,
+        image: image_url("ogp.png"),
+        local: "ja-JP"
+      },
+      x: {
+        card: "summary_large_image",
+        site: "@RUNTEQ46B151748",
+        image: image_url("ogp.png")
+      }
+    }
+  end
 end

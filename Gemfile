@@ -105,3 +105,6 @@ gem "ransack"
 
 # AWS S3
 gem "fog-aws"
+
+# metaタグ
+gem "meta-tags"
