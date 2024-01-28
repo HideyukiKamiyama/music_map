@@ -51,15 +51,10 @@ class SpotsController < ApplicationController
 
   def update
     @artist_spot = ArtistSpot.new(spot_params.merge(user_id: current_user.id, id: params[:id]))
-    if check_artist_name
-      if @artist_spot.save
-        redirect_to spot_path(@artist_spot.id), data: { turbo: false }, notice: t('.notice')
-      else
-        flash.now[:alert] = t('.alert')
-        render :edit, status: :unprocessable_entity
-      end
+    if @artist_spot.save
+      redirect_to spot_path(@artist_spot.id), data: { turbo: false }, notice: t('.notice')
     else
-      flash.now[:alert] = t('.name')
+      flash.now[:alert] = t('.alert')
       render :edit, status: :unprocessable_entity
     end
   end
@@ -82,17 +77,5 @@ class SpotsController < ApplicationController
 
   def spot_params
     params.require(:artist_spot).permit(:tag, :spot_name, :name, :detail, :address, :latitude, :longitude, { images: [] }, :images_cache)
-  end
-
-  # 「Spotify API上のデータと比較することで正確なアーティスト名が入力されているかチェックするメソッド
-  def check_artist_name
-    artist_name = params["artist_spot"]["name"]
-    return false if artist_name.blank?
-
-    spotify_data = RSpotify::Artist.search(artist_name).first
-    return false unless spotify_data
-
-    spotify_name = spotify_data.name
-    artist_name == spotify_name
   end
 end
