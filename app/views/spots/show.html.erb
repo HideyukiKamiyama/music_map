@@ -5,12 +5,6 @@
     <hr>
   </div>
 
-  <div class="flex items-center justify-end my-4">
-    <% if logged_in? && current_user.own?(@spot) %>
-      <%= link_to t(".spot_edit"), edit_spot_path(@spot), data: { turbo: false }, class: "btn-primary" %>
-    <% end %>
-  </div>
-
   <div class="mx-auto">
     <% if @spot.images.present? %>
       <div class="flex justify-center mb-10">
@@ -54,9 +48,9 @@
       <div id="map" class="h-96 rounded-md"></div>
     </div>
 
-    <div class="flex flex-wrap items-center mb-20">
-      <div class="text-lg mr-2"><%= t(".create_user") %>：</div>
+    <div class="flex flex-row justify-between items-center mb-4">
       <div class="flex items-center">
+        <div class="text-lg mr-2"><%= t(".create_user") %>：</div>
         <div class="mr-2">
           <%= @spot.user.name %>
         </div>
@@ -66,21 +60,32 @@
           </div>
         </div>
       </div>
+      <% if logged_in? && current_user.own?(@spot) %>
+        <%= link_to "https://twitter.com/share?url=%0a#{request.url}&text=MusicMap%0a#{@spot.spot_name}/#{@spot.artist.name}", target: "_blank", title: "Xでシェア" do %>
+          <i><%= image_tag "logo-white.png", class: "w-10 rounded-lg bg-black p-2 m-2" %></i>
+        <% end %>
+      <% end %>
     </div>
-  </div>
 
-  <div class="mb-8">
-    <hr>
-  </div>
-
-  <%= render "comments/form", comment: @comment, spot: @spot %>
-
-  <div id="comments-list" class="flex flex-col mb-20">
-    <% if @comments.present? %>
-      <%= render @comments %>
-    <% else %>
-      <div id="none-comments" class="mb-3 px-2"><%= t(".none_comment") %></div>
+  <div class="flex items-center justify-end mr-2 mb-20">
+    <% if logged_in? && current_user.own?(@spot) %>
+      <%= link_to t(".spot_edit"), edit_spot_path(@spot), data: { turbo: false }, class: "btn-primary" %>
     <% end %>
+  </div>
+
+    <div class="mb-8">
+      <hr>
+    </div>
+
+    <%= render "comments/form", comment: @comment, spot: @spot %>
+
+    <div id="comments-list" class="flex flex-col mb-20">
+      <% if @comments.present? %>
+        <%= render @comments %>
+      <% else %>
+        <div id="none-comments" class="mb-3 px-2"><%= t(".none_comment") %></div>
+      <% end %>
+    </div>
   </div>
 </div>
 
