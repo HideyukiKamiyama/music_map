@@ -43,12 +43,13 @@ ja:
     edit:
       title: "聖地編集"
     form:
-      spot_name_placeholder: "こちらに入力した状態で「マーカー作成」ボタンをクリックすると自動で住所が入力されます"
       artist_name_placeholder: "正確なアーティスト名を入力してください"
+      spot_name_placeholder: "「取得」ボタンをクリックすると所在地を取得できます"
+      address_message: "（マーカーをドラッグすることで微調整ができます）"
+      address_placeholder: "国外は正しく取得できない場合があります。必要に応じて修正してください"
+      create_marker: "取得"
+      delete_marker: "リセット"
       images_limit: "（４枚まで投稿できます）"
-      address_placeholder: "マーカーを作成、ドラッグすると自動で更新されます"
-      create_marker: "マーカー作成"
-      delete_marker: "マーカー削除"
     bookmarks:
       none_bookmark: "ブックマークがありません"
     map:
