@@ -14,7 +14,7 @@ function initMap(){
 }
 
 
-// 「マーカー作成」ボタンクリック時に実行される関数
+// 「取得」ボタンクリック時に実行される関数
 function createMarker(){
   let inputAddress = document.getElementById('spot').value;
 
@@ -44,7 +44,7 @@ function createMarker(){
 }
 
 
-// 「マーカー削除」ボタンをクリックした際に実行される関数
+// 「リセット」ボタンをクリックした際に実行される関数
 function deleteMaker(){
   if (marker) {
     marker.setMap(null);
