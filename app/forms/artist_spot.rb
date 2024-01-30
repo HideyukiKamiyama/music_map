@@ -6,7 +6,6 @@ class ArtistSpot
   with_options presence: true do
     validates :tag
     validates :spot_name
-    validates :name
     validates :address
     validates :user_id
   end
@@ -37,10 +36,16 @@ class ArtistSpot
 
   # 「Spotify API上のデータと比較することで正確なアーティスト名が入力されているかチェックするバリデーション
   def check_artist_name
-    spotify_data = RSpotify::Artist.search(name).first
-    errors.add(:name, :no_artist_data) unless spotify_data
+    if name.blank?
+      errors.add(:name, :input_artist_name)
+    else
+      spotify_data = RSpotify::Artist.search(name).first
+      errors.add(:name, :no_artist_data) unless spotify_data
 
-    spotify_name = spotify_data.name
-    errors.add(:name, :not_accurate_name) unless name == spotify_name
+      if spotify_data
+        spotify_name = spotify_data.name
+        errors.add(:name, :not_accurate_name) unless name == spotify_name
+      end
+    end
   end
 end

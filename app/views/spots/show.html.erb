@@ -67,7 +67,7 @@
       <% end %>
     </div>
 
-  <div class="flex items-center justify-end mr-2 mb-20">
+  <div class="flex items-center justify-end mr-2 mb-16">
     <% if logged_in? && current_user.own?(@spot) %>
       <%= link_to t(".spot_edit"), edit_spot_path(@spot), data: { turbo: false }, class: "btn-primary" %>
     <% end %>
