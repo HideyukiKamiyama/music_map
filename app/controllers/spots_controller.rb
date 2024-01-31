@@ -20,17 +20,17 @@ class SpotsController < ApplicationController
   end
 
   def edit
-    @spot = current_user.spots.find(params[:id])
+    spot = current_user.spots.find(params[:id])
     @artist_spot = ArtistSpot.new(
-      id: @spot.id,
-      tag: @spot.tag,
-      spot_name: @spot.spot_name,
-      name: @spot.artist.name,
-      detail: @spot.detail,
-      user_id: @spot.user_id,
-      address: @spot.address,
-      latitude: @spot.latitude,
-      longitude: @spot.longitude
+      id: spot.id,
+      tag: spot.tag,
+      spot_name: spot.spot_name,
+      name: spot.artist.name,
+      detail: spot.detail,
+      user_id: spot.user_id,
+      address: spot.address,
+      latitude: spot.latitude,
+      longitude: spot.longitude
     )
   end
 
