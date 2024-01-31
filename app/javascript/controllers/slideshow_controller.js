@@ -7,8 +7,6 @@ export default class extends Controller {
   initialize() {
     this.index = 0
     this.showCurrentSlide()
-    console.log(this.countValue)
-    console.log(typeof this.countValue)
   }
 
   next() {
