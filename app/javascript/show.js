@@ -16,5 +16,19 @@ function initMap(){
   });
 }
 
-// initMap関数をグローバルにするための記述
+
+// 聖地削除時に確認ダイアログを表示するための関数
+function checkDelete(){
+  if(window.confirm("本当に削除しますか？")){
+    return true;
+  }
+  else{
+    window.alert("キャンセルされました");
+    return false;
+  }
+}
+
+
+// 関数をグローバルにするための記述
 window.initMap = initMap;
+window.checkDelete = checkDelete;

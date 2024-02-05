@@ -68,6 +68,8 @@ ja:
     update:
       notice: "聖地を更新しました"
       alert: "聖地の更新に失敗しました"
+    destroy:
+      notice: "聖地を削除しました"
   comments:
     create:
       notice: "コメントを作成しました"
