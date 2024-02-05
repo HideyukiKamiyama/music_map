@@ -31,7 +31,6 @@ ja:
   spots:
     show:
       title: "聖地詳細"
-      spot_edit: "聖地編集"
       spot_name: "地名 / 施設名"
       spot_tag: "分類"
       artist_name: "アーティスト名"

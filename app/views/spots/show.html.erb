@@ -72,11 +72,12 @@
       <% end %>
     </div>
 
-  <div class="flex items-center justify-end mr-2 mb-16">
-    <% if logged_in? && current_user.own?(@spot) %>
-      <%= link_to t(".spot_edit"), edit_spot_path(@spot), data: { turbo: false }, class: "btn-primary" %>
-    <% end %>
-  </div>
+    <div class="flex items-center justify-end mr-2 mb-16">
+      <% if logged_in? && current_user.own?(@spot) %>
+        <%= link_to t("defaults.edit"), edit_spot_path(@spot), data: { turbo: false }, class: "btn-primary mr-2" %>
+        <%= button_to t("defaults.delete"), spot_path(@spot), method: :delete, data: { turbo: false }, form: { onSubmit: "return checkDelete()" }, class: "btn-primary text-gray-700 bg-gray-100 hover:bg-red-600 hover:text-neutral-50 hover:shadow-md" %>
+      <% end %>
+    </div>
 
     <div class="mb-8">
       <hr>
