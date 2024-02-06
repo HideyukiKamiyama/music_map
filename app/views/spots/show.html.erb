@@ -65,11 +65,14 @@
           </div>
         </div>
       </div>
-      <% if logged_in? && current_user.own?(@spot) %>
-        <%= link_to "https://twitter.com/share?url=%0a#{request.url}&text=MusicMap%0a#{@spot.spot_name}/#{@spot.artist.name}", target: "_blank", title: "Xでシェア" do %>
-          <i><%= image_tag "logo-white.png", class: "w-10 rounded-lg bg-black p-2 m-2" %></i>
+      <div class="flex items-center mr-2">
+        <% if logged_in? && current_user.own?(@spot) %>
+          <%= render_bookmark_button(current_user, @spot) %>
+          <%= link_to "https://twitter.com/share?url=%0a#{request.url}&text=MusicMap%0a#{@spot.spot_name}/#{@spot.artist.name}", target: "_blank", title: "Xでシェア" do %>
+            <i><%= image_tag "logo-white.png", class: "w-8 rounded-lg bg-black p-2 m-2" %></i>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
 
     <div class="flex items-center justify-end mr-2 mb-10">
