@@ -16,10 +16,10 @@ class Spot < ApplicationRecord
   after_validation :geocode
 
   def self.ransackable_attributes(_auth_object = nil)
-    %w[artist_id detail spot_name tag]
+    %w[tag]
   end
 
   def self.ransackable_associations(_auth_object = nil)
-    %w[artist bookmarks comments user]
+    %w[artist]
   end
 end
