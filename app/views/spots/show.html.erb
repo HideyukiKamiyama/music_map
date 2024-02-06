@@ -7,7 +7,7 @@
 
   <div class="mx-auto">
     <div class="px-18">
-      <div class="mb-4">
+      <div class="mb-10">
         <div class="flex flex-wrap items-center mb-2">
           <h1 class="text-3xl mr-4"><%= @spot.spot_name %></h1>
           <div class="badge badge-lg bg-amber-300 border-none"><%= @spot.tag_i18n %></div>
@@ -65,18 +65,25 @@
           </div>
         </div>
       </div>
-      <% if logged_in? && current_user.own?(@spot) %>
-        <%= link_to "https://twitter.com/share?url=%0a#{request.url}&text=MusicMap%0a#{@spot.spot_name}/#{@spot.artist.name}", target: "_blank", title: "Xでシェア" do %>
-          <i><%= image_tag "logo-white.png", class: "w-10 rounded-lg bg-black p-2 m-2" %></i>
+      <div class="flex items-center mr-2">
+          <%= render_bookmark_button(current_user, @spot) %>
+        <% if logged_in? && current_user.own?(@spot) %>
+          <%= link_to "https://twitter.com/share?url=%0a#{request.url}&text=MusicMap%0a#{@spot.spot_name}/#{@spot.artist.name}", target: "_blank", title: "Xでシェア" do %>
+            <i><%= image_tag "logo-white.png", class: "w-8 rounded-lg bg-black p-2 m-2" %></i>
+          <% end %>
         <% end %>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-end mr-2 mb-10">
+      <% if logged_in? && current_user.own?(@spot) %>
+        <%= link_to t("defaults.edit"), edit_spot_path(@spot), data: { turbo: false }, class: "btn-primary mr-2" %>
+        <%= button_to t("defaults.delete"), spot_path(@spot), method: :delete, data: { turbo: false }, form: { onSubmit: "return checkDelete()" }, class: "btn-primary text-gray-700 bg-gray-200 hover:bg-red-500 hover:text-neutral-50 hover:shadow-md" %>
       <% end %>
     </div>
 
-    <div class="flex items-center justify-end mr-2 mb-16">
-      <% if logged_in? && current_user.own?(@spot) %>
-        <%= link_to t("defaults.edit"), edit_spot_path(@spot), data: { turbo: false }, class: "btn-primary mr-2" %>
-        <%= button_to t("defaults.delete"), spot_path(@spot), method: :delete, data: { turbo: false }, form: { onSubmit: "return checkDelete()" }, class: "btn-primary text-gray-700 bg-gray-100 hover:bg-red-600 hover:text-neutral-50 hover:shadow-md" %>
-      <% end %>
+    <div class="flex justify-center mb-16">
+        <%= link_to t(".to_spot_index"), spots_path, data: { turbo: false }, class: "btn-primary text-gray-700 bg-gray-200 hover:bg-gray-300 hover:shadow-md" %>
     </div>
 
     <div class="mb-8">

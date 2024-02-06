@@ -8,7 +8,7 @@
     </div>
     <%= image_tag "top_icon.svg" %>
   </div>
-  <p class="flex justify-center text-yellow-400 text-xl my-10">街と音楽を繋げるお出かけアプリ♪</p>
+  <p class="flex justify-center text-yellow-400 text-2xl my-10">街と音楽を繋げるお出かけアプリ♪</p>
 
   <% unless logged_in? %>
   <div class="flex justify-center mt-20 mb-8">
@@ -17,27 +17,29 @@
   <% end %>
 </section>
 
-<section class="flex justify-center my-4 p-4">
-  <div class="flex flex-col w-3/4 rounded-xl shadow-md">
+<section class="flex justify-center p-4">
+  <div class="flex flex-col w-3/4 rounded-xl shadow-md bg-neutral-100 py-6">
     <h2 class="flex justify-center text-3xl font-medium">Music Mapとは？</h2>
     <p class="flex justify-center pt-4">音楽に関する聖地を登録、検索できるお出かけアプリです♪</p>
-    <p class="flex justify-center pb-4">皆さんの知ってる聖地を自由に登録してみましょう！</p>
+    <p class="flex justify-center">皆さんの知ってる聖地を自由に登録してみましょう！</p>
   </div>
 </section>
 
-<section class="flex justify-center my-4 p-4">
-  <div class="flex flex-col w-3/4 rounded-xl shadow-md">
+<section class="flex justify-center my-8 p-4">
+  <div class="flex flex-col w-3/4 rounded-xl shadow-md bg-neutral-100 py-6">
     <h2 class="flex justify-center text-3xl font-medium m-2">使い方</h2>
-    <div class="flex flex-col m-2">
-      <section class="m-4">
+    <div class="flex flex-col">
+      <section class="m-10">
         <h3 class="flex justify-center text-2xl font-medium">その１. 聖地を登録してみよう！</h3>
         <p class="flex justify-center pt-4">好きなアーティストに関連する場所を登録してみましょう♪</p>
         <p class="flex justify-center pb-4">登録フォームではマップ上のマーカーをドラッグすることで詳細な位置を登録できます！</p>
+        <%= image_tag "form_image.webp", class: "rounded-lg shadow" %>
       </section>
-      <section class="m-4">
+      <section class="m-10">
         <h3 class="flex justify-center text-2xl font-medium">その２. 聖地を検索してみよう！</h3>
         <p class="flex justify-center pt-4">条件を絞って聖地を検索してみよう♪</p>
         <p class="flex justify-center pb-4">家の近所にあのアーティストの聖地があるかも！！？？</p>
+        <%= image_tag "search.webp", class: "rounded-lg shadow" %>
       </section>
     </div>
   </div>

@@ -26,10 +26,10 @@ document.addEventListener("turbo:load", () => {
     listTab.classList.remove("tab-active");
   });
 
-  mapView.style.display = "block";
-  listView.style.display = "none";
-  mapTab.classList.add("tab-active");
-  listTab.classList.remove("tab-active");
+  listView.style.display = "block";
+  mapView.style.display = "none";
+  listTab.classList.add("tab-active");
+  mapTab.classList.remove("tab-active");
 });
 
 
