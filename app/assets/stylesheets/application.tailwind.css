@@ -7,7 +7,7 @@
     @apply flex-shrink-0 text-neutral-50 bg-amber-500 border-0 py-2 px-8 focus:outline-blue-600 hover:bg-amber-600 hover:shadow-md transition duration-300 rounded-full text-lg mt-10 sm:mt-0;
   }
   .btn-secondary {
-    @apply rounded-lg py-2 px-5 text-gray-700 bg-gray-100 inline-block font-medium focus:outline-blue-600 hover:bg-gray-200 hover:shadow-md transition duration-300;
+    @apply rounded-lg py-2 px-5 text-gray-700 bg-gray-100 shadow-sm inline-block font-medium focus:outline-blue-600 hover:bg-gray-200 hover:shadow-md transition duration-300;
   }
   .link-primary {
     @apply text-neutral-50 hover:text-amber-500 transition duration-300;
