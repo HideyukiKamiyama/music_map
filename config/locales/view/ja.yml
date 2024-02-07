@@ -45,6 +45,7 @@ ja:
       title: "聖地編集"
     form:
       artist_name_placeholder: "正確なアーティスト名を入力してください"
+      spot_name_limit: "（30文字以内）"
       spot_name_placeholder: "「取得」ボタンをクリックすると所在地を取得できます"
       address_message: "（マーカーをドラッグすることで微調整ができます）"
       address_placeholder: "国外は正しく取得できない場合があります。必要に応じて修正してください"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_07_133202) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_07_142654) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,7 +41,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_07_133202) do
   end
 
   create_table "spots", force: :cascade do |t|
-    t.string "spot_name", null: false
+    t.string "spot_name", limit: 30, null: false
     t.text "detail", null: false
     t.integer "tag", null: false
     t.bigint "user_id", null: false

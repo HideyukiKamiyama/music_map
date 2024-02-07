@@ -11,6 +11,8 @@ class ArtistSpot
     validates :user_id
   end
 
+  validates :spot_name, length: { maximum: 30 }
+
   validate :images_count_validation
   validate :check_artist_name
 
