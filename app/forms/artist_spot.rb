@@ -7,6 +7,7 @@ class ArtistSpot
     validates :tag
     validates :spot_name
     validates :address
+    validates :detail
     validates :user_id
   end
 
