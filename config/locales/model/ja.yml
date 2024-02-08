@@ -19,7 +19,7 @@ ja:
         spot_name: "地名 / 施設名"
         detail: "詳細"
         tag: "分類"
-        address: "所在地"
+        address: "住所"
         latitude: "緯度"
         longitude: "経度"
       comment:
@@ -33,7 +33,7 @@ ja:
         spot_name: "地名 / 施設名"
         tag: "分類"
         detail: "詳細"
-        address: "所在地"
+        address: "住所"
         images: "写真"
     errors:
       models:
