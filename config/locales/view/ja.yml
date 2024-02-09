@@ -36,7 +36,7 @@ ja:
       artist_name: "アーティスト名"
       detail: "詳細"
       create_user: "作成者"
-      address: "所在地"
+      address: "住所"
       to_spot_index: "一覧へ戻る"
       none_comment: "コメントがありません"
     index:
@@ -45,10 +45,11 @@ ja:
       title: "聖地編集"
     form:
       artist_name_placeholder: "正確なアーティスト名を入力してください"
-      spot_name_placeholder: "「取得」ボタンをクリックすると所在地を取得できます"
+      spot_name_limit: "（30文字以内）"
+      spot_name_placeholder: "ボタンをクリックすると住所を取得できます"
       address_message: "（マーカーをドラッグすることで微調整ができます）"
       address_placeholder: "国外は正しく取得できない場合があります。必要に応じて修正してください"
-      create_marker: "取得"
+      create_marker: "住所取得"
       delete_marker: "リセット"
       images_limit: "（４枚まで投稿できます）"
     bookmarks:

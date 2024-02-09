@@ -7,8 +7,11 @@ class ArtistSpot
     validates :tag
     validates :spot_name
     validates :address
+    validates :detail
     validates :user_id
   end
+
+  validates :spot_name, length: { maximum: 30 }
 
   validate :images_count_validation
   validate :check_artist_name
@@ -39,13 +42,10 @@ class ArtistSpot
     if name.blank?
       errors.add(:name, :input_artist_name)
     else
-      spotify_data = RSpotify::Artist.search(name).first
+      spotify_data = RSpotify::Artist.search(name).map(&:name)
       errors.add(:name, :no_artist_data) unless spotify_data
 
-      if spotify_data
-        spotify_name = spotify_data.name
-        errors.add(:name, :not_accurate_name) unless name == spotify_name
-      end
+      errors.add(:name, :not_accurate_name) if spotify_data&.exclude?(name)
     end
   end
 end
