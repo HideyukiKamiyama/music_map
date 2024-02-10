@@ -45,11 +45,27 @@
   </div>
 </section>
 
+<section class="flex justify-center my-8 p-4">
+  <div class="flex flex-col w-3/4 rounded-xl shadow-md bg-neutral-100 py-6">
+    <h2 class="flex justify-center text-3xl font-medium text-red-500 m-2">※ 注意 ※</h2>
+    <div class="flex flex-col items-start mx-auto">
+      <section class="m-2">
+        <p class="flex justify-center text-xl pt-2">その１. 聖地に訪れる際は近隣の方の迷惑にならないようマナーを守りましょう！</p>
+      </section>
+      <section class="m-2">
+        <p class="flex justify-center text-xl pt-2">その２. 私有地や制限区域に許可なく立ち入らないようにしましょう！</p>
+      </section>
+      <section class="m-2">
+        <p class="flex justify-center text-xl pt-2">その３. 著作権に触れるコンテンツを投稿しないようにしましょう！</p>
+      </section>
+    </div>
+  </div>
+</section>
+
 <div>
   <% unless logged_in? %>
   <div class="flex justify-center mt-10 mb-20">
     <div class="flex flex-col">
-      <h2 class="text-xl font-base mb-3">登録はこちらから</h2>
       <div class="flex justify-center">
         <%= link_to t("defaults.signup"), new_user_path, class: "btn-primary" %>
       </div>
