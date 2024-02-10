@@ -38,8 +38,10 @@
           <% end %>
         </div>
         <div class="flex flex-col justify-center shrink">
-          <% @spot.images.each_with_index do |spot, i| %>
-            <%= image_tag (spot.url), class: "rounded m-2 w-30 h-20 hover:shadow-2xl transition duration-300", data: {index: i} %>
+          <% if @spot.images.size >= 2 %>
+            <% @spot.images.each_with_index do |spot, i| %>
+              <%= image_tag (spot.url), class: "rounded m-2 w-30 h-20 hover:shadow-2xl transition duration-300", data: {index: i} %>
+            <% end %>
           <% end %>
         </div>
       </div>
