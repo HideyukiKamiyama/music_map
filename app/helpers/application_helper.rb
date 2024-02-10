@@ -8,13 +8,13 @@ module ApplicationHelper
   end
 
   def page_title(title = "")
-    base_title = "MusicMap"
+    base_title = "MelodyMap"
     title.empty? ? base_title : "#{title} | #{base_title}"
   end
 
   def default_meta_tags
     {
-      site: "MusicMap",
+      site: "MelodyMap",
       title: "街と音楽を繋げるお出かけアプリ♪",
       reverse: false,
       charset: "utf-8",

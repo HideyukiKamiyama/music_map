@@ -9,7 +9,7 @@ ja:
     privacy_policy: "プライバシーポリシー"
     inquiry: "お問い合わせ"
     signup: "会員登録"
-    spot_create: "聖地作成"
+    spot_create: "聖地登録"
     create: "登録"
     edit: "編集"
     delete: "削除"
@@ -21,7 +21,7 @@ ja:
     search_artist_name: "アーティスト名で検索"
     search_spot_tag: "分類で検索"
     video_location: "MVロケ地"
-    sign: "サイン"
+    sign: "サイン（があるお店など）"
     others: "その他"
   user_sessions:
     new:
@@ -47,7 +47,7 @@ ja:
       artist_name_placeholder: "正確なアーティスト名を入力してください"
       spot_name_limit: "（30文字以内）"
       spot_name_placeholder: "ボタンをクリックすると住所を取得できます"
-      address_message: "（マーカーをドラッグすることで微調整ができます）"
+      address_message: "（マーカーをドラッグすることで位置の調整ができます）"
       address_placeholder: "国外は正しく取得できない場合があります。必要に応じて修正してください"
       create_marker: "住所取得"
       delete_marker: "リセット"
