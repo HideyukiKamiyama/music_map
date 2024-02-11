@@ -38,7 +38,7 @@ function createMarker(){
         getAddress(marker.getPosition());
       });
     } else {
-      alert('住所を取得できませんでした。');
+      alert('住所を取得できませんでした。フォームに「地名/施設名（都道府県名）」などで入力し、もう一度取得してください。');
     }
   });
 }
