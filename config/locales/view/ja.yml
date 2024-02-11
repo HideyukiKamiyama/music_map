@@ -27,7 +27,7 @@ ja:
     new:
       password: "パスワード"
       signup_link: "会員登録ページへ"
-      forgot_password: "パスワードをお忘れの方はこちら"
+      forgot_password: "パスワードをお忘れの方はこちら（未実装）"
   spots:
     show:
       title: "聖地詳細"
