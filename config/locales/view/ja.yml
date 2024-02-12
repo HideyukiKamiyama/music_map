@@ -48,7 +48,7 @@ ja:
       spot_name_limit: "（30文字以内）"
       spot_name_placeholder: "ボタンをクリックすると住所を取得できます"
       address_message: "（マーカーをドラッグすることで位置の調整ができます）"
-      address_placeholder: "国外は正しく取得できない場合があります。必要に応じて修正してください"
+      address_placeholder: "住所は正しく取得できない場合があります。必要に応じて修正してください"
       create_marker: "住所取得"
       delete_marker: "リセット"
       images_limit: "（４枚まで投稿できます）"
