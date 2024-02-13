@@ -1,5 +1,5 @@
 class SpotsController < ApplicationController
-  skip_before_action :require_login, only: %i[index show]
+  skip_before_action :require_login, only: %i[index show autocomplete]
 
   def index
     @q = Spot.ransack(params[:q])
