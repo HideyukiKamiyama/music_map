@@ -7,6 +7,6 @@
     per_page:      number of items to fetch per page
     remote:        data-remote
 -%>
-<span class="page<%= ' current btn-active join-item btn' if page.current? %>">
-  <%= link_to_unless page.current?, page, url, {remote: remote, rel: page.rel, class: "join-item btn"} %>
+<span class="page<%= 'current bg-gray-300 join-item btn' if page.current? %> text-gray-700 hover:bg-gray-100 border-none">
+  <%= link_to_unless page.current?, page, url, {remote: remote, rel: page.rel, class: "join-item btn bg-gray-200 text-gray-700 hover:bg-gray-100 border-none"} %>
 </span>
