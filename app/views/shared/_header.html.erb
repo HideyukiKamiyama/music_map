@@ -7,10 +7,10 @@
           <%= image_tag "hamburger_menu.svg" %>
         </summary>
         <ul class="p-2 shadow menu dropdown-content z-[1] bg-neutral-50 rounded-box w-52 text-gray-700">
-          <li class="hover:bg-neutral-200 rounded-md"><%= link_to t("defaults.spots_index"), spots_path, data: { turbo: false } %></li>
-          <li class="hover:bg-neutral-200 rounded-md"><%= link_to t("defaults.bookmarks_index"), bookmarks_spots_path, data: { turbo: false } %></li>
-          <li class="hover:bg-neutral-200 rounded-md"><%= link_to t("defaults.profile"), profile_path %></li>
-          <li class="hover:bg-neutral-200 rounded-md"><%= link_to t("defaults.logout"), logout_path, data: { turbo_method: :delete } %></li>
+          <li class="hover:bg-neutral-100 rounded-md"><%= link_to t("defaults.spots_index"), spots_path, data: { turbo: false } %></li>
+          <li class="hover:bg-neutral-100 rounded-md"><%= link_to t("defaults.bookmarks_index"), bookmarks_spots_path, data: { turbo: false } %></li>
+          <li class="hover:bg-neutral-100 rounded-md"><%= link_to t("defaults.profile"), profile_path %></li>
+          <li class="hover:bg-neutral-100 rounded-md"><%= link_to t("defaults.logout"), logout_path, data: { turbo_method: :delete } %></li>
         </ul>
       </details>
     </nav>
