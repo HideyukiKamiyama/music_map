@@ -1,7 +1,7 @@
 <%= image_tag "cat.svg", class: "ml-20" %>
 <footer class="text-neutral-50 bg-yellow-400 py-6">
   <div class="flex-col md:flex-row items-center">
-    <nav class="flex justify-center items-center text-base space-x-3">
+    <nav class="flex justify-center items-center text-sm sm:text-base space-x-3">
       <%= link_to t("defaults.terms_of_service"), terms_of_service_path, class: "link-primary" %>
       <%= link_to t("defaults.privacy_policy"), privacy_policy_path, class: "link-primary" %>
       <%= link_to t("defaults.inquiry"), "https://docs.google.com/forms/d/e/1FAIpQLSf_9DtVWrsXqct0oMMMZ0SykXH2b9waLx2GDaja77JFMLf-jA/viewform", class: "link-primary", target: "_blank" %>
@@ -10,5 +10,5 @@
       <% end %>
     </nav>
   </div>
-  <div class="flex justify-center text-sm">©️ 2024 MelodyMap</div>
+  <div class="flex justify-center text-xs sm:text-sm">©️ 2024 MelodyMap</div>
 </footer>
