@@ -7,7 +7,7 @@
       <p class="text-red-500 ml-1">*</p>
     </div>
 
-    <div class="flex justify-around">
+    <div class="flex justify-around text-xs sm:text-base">
       <div>
         <%= form.radio_button :tag, :video_location %>
         <%= form.label :tag_video_location, t("defaults.video_location") %>
@@ -55,7 +55,7 @@
       <div class="flex flex-wrap">
         <%= form.label :address, class: "text-base font-bold mb-2" %>
         <p class="text-red-500 ml-1">*</p>
-        <p class="ml-1 text-sm"><%= t(".address_message") %></p>
+        <p class="ml-1 text-xs sm:text-sm"><%= t(".address_message") %></p>
       </div>
       <%= form.text_field :address, placeholder: t(".address_placeholder"), id: "address", class: "shadow appearance-none border rounded w-full py-2 px-3" %>
     </div>
