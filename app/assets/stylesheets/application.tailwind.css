@@ -12,6 +12,9 @@
   .slide_button {
     @apply btn btn-circle opacity-70 hover:opacity-50 transition duration-300;
   }
+  .hamburger_list {
+    @apply hover:bg-neutral-100 rounded-md;
+  }
   .link-primary {
     @apply text-neutral-50 hover:text-amber-500 transition duration-300;
   }

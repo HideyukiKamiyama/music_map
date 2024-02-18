@@ -9,7 +9,7 @@
     <div class="flex flex-grow mb-1 mr-2">
       <%= render "search_form", q: @q, url: spots_path %>
     </div>
-    <div class="mb-1">
+    <div class="mb-1 hidden lg:block">
       <%= link_to t("defaults.spot_create"), new_spot_path, data: { turbo: false }, class: "btn-primary" %>
     </div>
   </div>
