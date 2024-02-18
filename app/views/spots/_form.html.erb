@@ -46,7 +46,7 @@
       <%= form.text_field :spot_name, placeholder: t(".spot_name_placeholder"), id: "spot", class: "shadow border rounded w-full py-2 px-3" %>
     </div>
     <div class="flex flex-nowrap">
-      <input type="button" value=<%= t(".create_marker") %> onclick="createMarker()" class="btn-secondary ml-2 w-28">
+      <input type="button" value=<%= t(".create_marker") %> onclick="createMarker()" class="btn-secondary ml-2 w-20 sm:w-28">
     </div>
   </div>
 
@@ -60,7 +60,7 @@
       <%= form.text_field :address, placeholder: t(".address_placeholder"), id: "address", class: "shadow appearance-none border rounded w-full py-2 px-3" %>
     </div>
     <div class="flex flex-nowrap">
-      <input type="button" value=<%= t(".delete_marker") %> onclick="deleteMaker()" class="btn-secondary ml-2 w-28">
+      <input type="button" value=<%= t(".delete_marker") %> onclick="deleteMaker()" class="btn-secondary ml-2 w-20 sm:w-28">
     </div>
   </div>
 

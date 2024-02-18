@@ -5,11 +5,11 @@
     <hr>
   </div>
 
-  <div class="flex flex-wrap justify-between items-center w-full my-4">
-    <div class="flex flex-grow mr-6">
+  <div class="flex flex-wrap justify-between items-center w-full my-6">
+    <div class="flex flex-grow mb-1 mr-2">
       <%= render "search_form", q: @q, url: spots_path %>
     </div>
-    <div class="flex">
+    <div class="mb-1 hidden lg:block">
       <%= link_to t("defaults.spot_create"), new_spot_path, data: { turbo: false }, class: "btn-primary" %>
     </div>
   </div>
@@ -19,7 +19,7 @@
   <div id="list-view">
     <div class="my-6">
       <%= turbo_frame_tag "spots-list" do %>
-        <div class="flex flex-col h-[36rem]">
+        <div class="flex flex-col h-[64rem] sm:h-[36rem]">
           <% if @spots.present? %>
             <%= render @spots %>
           <% else %>
