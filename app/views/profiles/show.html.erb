@@ -1,5 +1,5 @@
 <% content_for(:title, t("defaults.profile")) %>
-<div class="container mx-auto px-8">
+<div class="container mx-auto min-h-[600px] sm:min-h-screen px-8">
   <div class="mb-8">
     <h1 class="text-xl font-bold mb-2"><%= t("defaults.profile") %></h1>
     <hr>
@@ -14,18 +14,20 @@
     </div>
     <hr>
   </div>
+
   <div class="mb-10">
     <h2 class="text-base font-bold mb-2"><%= t(".user_name") %></h2>
     <p class="flex justify-center mb-2"><%= current_user.name %></p>
     <hr>
   </div>
+
   <div class="mb-20">
     <h2 class="text-base font-bold mb-2"><%= t("defaults.email") %></h2>
     <p class="flex justify-center mb-2"><%= current_user.email %></p>
     <hr>
   </div>
-</div>
 
-<div class="flex justify-center">
-  <%= link_to t("defaults.edit"), edit_profile_path, class: "btn-primary" %>
+  <div class="flex justify-center">
+    <%= link_to t("defaults.edit"), edit_profile_path, class: "btn-primary" %>
+  </div>
 </div>
