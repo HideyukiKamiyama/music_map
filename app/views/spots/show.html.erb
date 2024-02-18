@@ -29,8 +29,8 @@
                 <%= image_tag (spot.url) %>
                 <% if @spot.images.size >= 2 %>
                   <div class="absolute flex justify-between w-full transform -translate-y-1/2 top-1/2">
-                    <button class="btn btn-circle opacity-70" data-action="slideshow#previous">❮</button>
-                    <button class="btn btn-circle opacity-70" data-action="slideshow#next">❯</button>
+                    <button class="slide_button" data-action="slideshow#previous">❮</button>
+                    <button class="slide_button" data-action="slideshow#next">❯</button>
                   </div>
                 <% end %>
               </div>
