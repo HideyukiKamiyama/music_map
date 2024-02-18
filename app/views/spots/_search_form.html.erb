@@ -5,5 +5,5 @@
     <%= form.hidden_field :artist_name, data: { autocomplete_target: 'hidden' } %>
     <ul class="absolute z-10 w-full rounded-md shadow bg-white mb-1 mr-1" data-autocomplete-target="results"></ul>
   </div>
-  <%= form.button t("defaults.search"), class: "btn-secondary mb-1 mr-1", type: "button", onclick: "submit();" %>
+  <%= form.button t("defaults.search"), class: "btn-secondary w-20 sm:w-24 mb-1 mr-1", type: "button", onclick: "submit();" %>
 <% end %>
