@@ -5,11 +5,11 @@
     <hr>
   </div>
 
-  <div class="flex flex-wrap justify-between items-center w-full my-4">
-    <div class="flex flex-grow mr-6">
+  <div class="flex flex-wrap justify-between items-center w-full my-6">
+    <div class="flex flex-grow mb-1 mr-2">
       <%= render "search_form", q: @q, url: spots_path %>
     </div>
-    <div class="flex">
+    <div class="mb-1">
       <%= link_to t("defaults.spot_create"), new_spot_path, data: { turbo: false }, class: "btn-primary" %>
     </div>
   </div>
