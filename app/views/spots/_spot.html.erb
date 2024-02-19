@@ -11,7 +11,7 @@
         <p><%= spot.artist.name %></p>
       <% end %>
     </div>
-    <div class="flex flex-nowrap">
+    <div class="flex flex-nowrap justify-between w-full sm:w-36">
       <div class="badge badge-lg bg-gray-200 text-gray-700 border-none w-24 mr-3"><%= spot.tag_i18n %></div>
       <% if logged_in? %>
         <%= render_bookmark_button(current_user, spot) %>
