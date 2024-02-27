@@ -6,11 +6,8 @@
   </div>
 
   <div class="flex flex-wrap justify-between items-center w-full my-6">
-    <div class="flex flex-grow mb-1 mr-2 lg:mr-3 sm:mr-0">
+    <div class="flex flex-grow mb-1">
       <%= render "search_form", q: @q, url: spots_path %>
-    </div>
-    <div class="mb-1 hidden lg:block">
-      <%= link_to t("defaults.spot_create"), new_spot_path, data: { turbo: false }, class: "btn-primary" %>
     </div>
   </div>
 
