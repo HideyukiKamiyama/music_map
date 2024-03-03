@@ -17,7 +17,7 @@ ja:
         name: "アーティスト名"
       spot:
         spot_name: "地名 / 施設名"
-        detail: "詳細"
+        detail: "思い出 / 詳細"
         tag: "分類"
         address: "住所"
         latitude: "緯度"
@@ -32,9 +32,9 @@ ja:
         name: "アーティスト名"
         spot_name: "地名 / 施設名"
         tag: "分類"
-        detail: "詳細"
+        detail: "思い出 / 詳細"
         address: "住所"
-        images: "写真"
+        images: "思い出の写真"
     errors:
       models:
         artist_spot:
