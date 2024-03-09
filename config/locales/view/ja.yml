@@ -23,6 +23,7 @@ ja:
     video_location: "MVロケ地"
     sign: "サイン（があるお店など）"
     others: "その他"
+    password_reset: "パスワードリセット"
   user_sessions:
     new:
       password: "パスワード"
