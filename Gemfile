@@ -110,3 +110,6 @@ gem "fog-aws"
 
 # metaタグ
 gem "meta-tags"
+
+# 定数の管理
+gem "config"
