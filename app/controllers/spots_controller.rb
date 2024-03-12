@@ -37,7 +37,8 @@ class SpotsController < ApplicationController
   def create
     @artist_spot = ArtistSpot.new(spot_params.merge(user_id: current_user.id))
     if @artist_spot.save
-      redirect_to spots_path, notice: t('.notice')
+      spot = Spot.last
+      redirect_to spot_path(spot), notice: t('.notice')
     else
       flash.now[:alert] = t('.alert')
       render :new, status: :unprocessable_entity
