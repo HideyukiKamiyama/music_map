@@ -14,6 +14,8 @@ ja:
     edit: "編集"
     delete: "削除"
     search: "検索"
+    submit: "送信"
+    change: "変更"
     delete_confirm: "本当に削除しますか？"
     email: "メールアドレス"
     display_map: "マップ表示"
@@ -23,11 +25,13 @@ ja:
     video_location: "MVロケ地"
     sign: "サイン（があるお店など）"
     others: "その他"
+    password_reset: "パスワードリセット"
+    password_reset_form: "パスワードリセット申請"
   user_sessions:
     new:
       password: "パスワード"
       signup_link: "会員登録ページへ"
-      forgot_password: "パスワードをお忘れの方はこちら（未実装）"
+      forgot_password: "パスワードをお忘れの方はこちら"
   spots:
     show:
       title: "聖地詳細"

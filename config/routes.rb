@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     end
   end
   resources :bookmarks, only: %i[create destroy]
+  resources :password_resets, only: %i[new create edit update]
 
   resource :profile, only: %i[show edit update]
 
@@ -19,4 +20,6 @@ Rails.application.routes.draw do
 
   get "terms_of_service", to: "static_pages#terms_of_service"
   get "privacy_policy", to: "static_pages#privacy_policy"
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

@@ -1,0 +1,18 @@
+<% content_for(:title, t("defaults.password_reset_form")) %>
+<div class="container mx-auto px-8 xl:px-28 h-[24rem] sm:h-[36rem]">
+  <div class="mb-8">
+    <h1 class="text-xl font-bold mb-2"><%= t("defaults.password_reset_form") %></h1>
+    <hr>
+  </div>
+
+  <%= form_with url: password_resets_path, local: true do |form| %>
+    <div class="mb-28">
+      <%= form.label :email, User.human_attribute_name(:email), class: "block text-base font-bold mb-2" %>
+      <%= form.email_field :email, class: "shadow appearance-none border rounded w-full py-2 px-3 leading-tight" %>
+    </div>
+
+    <div class="flex items-center justify-center">
+      <%= form.button t("defaults.submit"), class: "btn-primary", type: "button", onclick: "submit();" %>
+    </div>
+  <% end %>
+</div>
