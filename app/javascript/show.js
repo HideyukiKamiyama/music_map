@@ -1,11 +1,12 @@
 // コントローラで作成した変数をJavaScriptに渡すための記法
 const spot = gon.spot;
+let map;
 
 // マップの初期化関数
 function initMap(){
   let mapPosition = {lat: parseFloat(spot['latitude']), lng: parseFloat(spot['longitude']) };
 
-  let map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 17,
     center: mapPosition
   });
@@ -16,6 +17,24 @@ function initMap(){
   });
 }
 
+
+// 現在地を取得するための関数
+function getCurrentLocation(){
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        let markerLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+        new google.maps.Marker({
+          position: markerLatLng,
+          map: map
+        });
+      }
+    );
+  } else {
+    alert("このブラウザは位置情報に対応していません");
+  }
+}
 
 // 聖地削除時に確認ダイアログを表示するための関数
 function checkDelete(){
@@ -31,4 +50,5 @@ function checkDelete(){
 
 // 関数をグローバルにするための記述
 window.initMap = initMap;
+window.getCurrentLocation = getCurrentLocation;
 window.checkDelete = checkDelete;

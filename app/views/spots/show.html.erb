@@ -55,6 +55,9 @@
         <p><%= @spot.address %></p>
       </div>
       <div id="map" class="h-96 rounded-md"></div>
+      <div class="flex justify-end">
+        <button class="btn-secondary m-2 p-2" onclick="getCurrentLocation()">現在地を取得</button>
+      </div>
     </div>
 
     <div class="flex flex-row justify-between items-center mb-4">
