@@ -29,7 +29,11 @@ function getCurrentLocation(){
 
         new google.maps.Marker({
           position: currentLocation,
-          map: map
+          map: map,
+          icon: {
+            url: '/assets/current_location_marker.png',
+            scaledSize: new google.maps.Size(37, 37)
+          }
         });
 
         let directionsService = new google.maps.DirectionsService();
