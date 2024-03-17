@@ -75,5 +75,4 @@ function checkDelete(){
 // 関数をグローバルにするための記述
 window.initMap = initMap;
 window.getCurrentLocation = getCurrentLocation;
-window.locationConfirm = locationConfirm;
 window.checkDelete = checkDelete;
