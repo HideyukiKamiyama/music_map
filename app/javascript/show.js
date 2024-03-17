@@ -31,7 +31,7 @@ function getCurrentLocation(){
           position: currentLocation,
           map: map,
           icon: {
-            url: '/assets/current_location_marker.png',
+            url: '/images/current_location_marker.png',
             scaledSize: new google.maps.Size(37, 37)
           }
         });
