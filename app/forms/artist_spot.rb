@@ -45,7 +45,16 @@ class ArtistSpot
       spotify_data = RSpotify::Artist.search(name).map(&:name)
       errors.add(:name, :no_artist_data) unless spotify_data
 
-      errors.add(:name, :not_accurate_name) if spotify_data&.exclude?(name)
+      japanese_artist = name.match?(/[一-龠]/)
+
+      formatted_name = name.delete(' ')
+      formatted_spotify_data = spotify_data.map { |n| n.delete(' ') }
+
+      if japanese_artist
+        errors.add(:name, :not_accurate_name) unless formatted_spotify_data.include?(formatted_name)
+      elsif spotify_data&.exclude?(name)
+        errors.add(:name, :not_accurate_name)
+      end
     end
   end
 end
