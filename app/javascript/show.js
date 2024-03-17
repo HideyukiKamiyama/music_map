@@ -60,18 +60,6 @@ function getCurrentLocation(){
 }
 
 
-// 現在地取得時に確認ダイアログを表示するための関数
-function locationConfirm(){
-  if(window.confirm("現在地を取得しますがよろしいですか？")){
-    return true;
-  }
-  else{
-    window.alert("キャンセルされました");
-    return false;
-  }
-}
-
-
 // 聖地削除時に確認ダイアログを表示するための関数
 function checkDelete(){
   if(window.confirm("本当に削除しますか？")){
