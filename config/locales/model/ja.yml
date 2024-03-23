@@ -89,3 +89,7 @@ ja:
     update:
       notice: "パスワードを変更しました"
       alert: "パスワードの変更に失敗しました"
+  oauths:
+    callback:
+      notice: "ログインに成功しました"
+      alert: "ログインに失敗しました"

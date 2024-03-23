@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'oauths/oauth'
+  get 'oauths/callback'
   root "static_pages#top"
 
   resources :users, only: %i[new create]
