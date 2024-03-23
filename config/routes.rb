@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'oauths/oauth'
-  get 'oauths/callback'
   root "static_pages#top"
 
   resources :users, only: %i[new create]
@@ -19,6 +17,10 @@ Rails.application.routes.draw do
   get "login", to: "user_sessions#new"
   post "login", to: "user_sessions#create"
   delete "logout", to: "user_sessions#destroy"
+
+  post "oauth/callback" => "oauths#callback"
+  get "oauth/callback" => "oauths#callback"
+  get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
   get "terms_of_service", to: "static_pages#terms_of_service"
   get "privacy_policy", to: "static_pages#privacy_policy"
