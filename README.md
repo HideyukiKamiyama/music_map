@@ -75,7 +75,8 @@ X（旧Twitter）を使用して宣伝を行います。
 - Xシェア機能
 
 
-## 機能の実装方針予定
+## 使用技術
+
 - バックエンド
   - Ruby 3.2.2
   - Ruby on Rails 7.1.2
@@ -99,8 +100,10 @@ X（旧Twitter）を使用して宣伝を行います。
 
 
 ## 画面遷移図
+
 https://www.figma.com/file/6inHsr10Oe0pJ7KbgZn5Zs/music_map?type=design&node-id=0-1&mode=design&t=0BVngzIhOdUOHUUH-0
 
 
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/66af4d8cd79fdd161f28dc56c51d2d4e.png)](https://gyazo.com/66af4d8cd79fdd161f28dc56c51d2d4e)
+
+[![Image from Gyazo](https://i.gyazo.com/d518998626495ec732c7ab2505f8fa66.png)](https://gyazo.com/d518998626495ec732c7ab2505f8fa66)
