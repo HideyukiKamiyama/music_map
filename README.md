@@ -90,7 +90,7 @@ YouTubeにアップロードされている公式ミュージックビデオを�
 
 
 
-## 画面遷移図
+## 画面遷移図（後日修正予定）
 https://www.figma.com/file/6inHsr10Oe0pJ7KbgZn5Zs/music_map?type=design&node-id=0-1&mode=design&t=0BVngzIhOdUOHUUH-0
 
 
