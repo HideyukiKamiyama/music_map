@@ -1,2 +1,5 @@
 default_url_options:
   host: "https://www.melody-map.com/"
+
+sorcery:
+    google_callback_url: "https://www.melody-map.com/oauth/callback?provider=google"
