@@ -30,6 +30,7 @@ ja:
   user_sessions:
     new:
       password: "パスワード"
+      google_login: "Googleでログイン"
       signup_link: "会員登録ページへ"
       forgot_password: "パスワードをお忘れの方はこちら"
   spots:

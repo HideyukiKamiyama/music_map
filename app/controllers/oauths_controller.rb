@@ -13,7 +13,7 @@ class OauthsController < ApplicationController
       begin
         signup_and_login(provider)
         redirect_to spots_path, notice: t(".notice")
-      rescue
+      rescue StandardError
         redirect_to root_path, alert: t(".alert")
       end
     end
@@ -22,7 +22,7 @@ class OauthsController < ApplicationController
   private
 
   def auth_params
-    params.permit(:code, :provider)
+    params.permit(:code, :provider, :scope, :authuser, :prompt)
   end
 
   def signup_and_login(provider)
