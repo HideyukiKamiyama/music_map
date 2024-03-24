@@ -25,12 +25,12 @@ ja:
     video_location: "MVロケ地"
     sign: "サイン（があるお店など）"
     others: "その他"
+    google_login: "Googleでログイン"
     password_reset: "パスワードリセット"
     password_reset_form: "パスワードリセット申請"
   user_sessions:
     new:
       password: "パスワード"
-      google_login: "Googleでログイン"
       signup_link: "会員登録ページへ"
       forgot_password: "パスワードをお忘れの方はこちら"
   spots:
